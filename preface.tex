@@ -1,4 +1,4 @@
-\documentclass{ees}
+\documentclass[abbrwidth=7em,shorttitlesize=55]{ees}
 
 \geometry{
   twoside=true,
@@ -11,6 +11,8 @@
 }
 
 \graphicspath{{./figures/}}
+
+\pghyphenation{english}{Mün-chen}
 
 \usepackage[style=apa]{biblatex}
 \addbibresource{references.bib}
@@ -27,8 +29,8 @@
 \RedeclareSectionCommand[afterskip=0pt plus 1pt,runin=false]{subsection}
 \RedeclareSectionCommand[beforeskip=0pt plus 1pt, afterskip=0pt plus 1pt,runin=false]{subsubsection}
 \RedeclareSectionCommand[beforeskip=0pt plus 1pt]{paragraph}
-\setkomafont{section}{\normalfont\sbseries\large}
-\setkomafont{subsection}{\normalfont\sbseries}
+\setkomafont{section}{\normalfont\sbseries\Large}
+\setkomafont{subsection}{\normalfont\sbseries\large}
 \setkomafont{subsubsection}{\normalfont\itshape}
 \setkomafont{paragraph}{\normalfont\itshape}
 
@@ -53,20 +55,41 @@
 \def\meterthreetwo{\raisebox{-1pt}[0pt][0pt]{\includegraphics[scale=.75]{meter/3_2}}}
 \newcommand\tablesection[1]{\multicolumn{4}{l}{\sbseries#1}\\\cmidrule{1-3}}
 \newcommand\tablesectionb[1]{\multicolumn{6}{l}{\sbseries#1}\\\cmidrule{1-4}}
-
-\renewcommand\sourceitem[6]{%
-  \item[#1]%
-    \begin{sourcedetails}%
-      \item[Library] #2%
-      \item[Shelfmark] #3%
-      \item[Category] #4%
-      \item[Date] \ifthenelse{\equal{#5}{\@empty}}{unknown}{#5}%
-      \item[RISM ID] \ifthenelse{\equal{#6}{\@empty}}{not available}{\href{https://opac.rism.info/search?id=#6&View=rism}{#6}}%
-    \end{sourcedetails}%
-}
+\newcommand\includeincipit[1]{\rlap{\includegraphics{incipits/5/#1}}}
 
 
 \begin{document}
+
+\shortname{Gugl}
+\shorttitle{Sacred vocal music}
+\begin{titlepage}%
+  \Large%
+  {\eestitlehead}%
+  \vfill%
+  Matthäus Gugl:\\%
+  {\sbseries Sacred vocal music}\\[\baselineskip]%
+  Including a thematic catalogue of his works (GuglW)%
+  \vfill%
+  {\ltseries\strut edited by Wolfgang Esser-Skala}\\[\baselineskip]%
+  \hspace*{\fill}\raisebox{0pt}[0pt][0pt]{\includegraphics[scale=1.25]{logo_full}}%
+\end{titlepage}%
+
+\thispagestyle{empty}
+
+\vspace*{\fill}
+
+\raisebox{-4mm}{\includegraphics{cc-by-sa-4.0}}\hspace*{1em}%
+Edition Esser-Skala e.U. · Koppl, Austria · 2026
+
+© 2026 by Edition Esser-Skala e.U. This edition is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit \url{https://creativecommons.org/licenses/by-sa/4.0/}.
+
+Edited by Wolfgang Esser-Skala · \includegraphics[height=1.33ex]{orcid.pdf} \href{https://orcid.org/0000-0002-7350-4045}{0000-0002-7350-4045}.\\
+Music engraving by LilyPond v2.24.4~(\url{https://www.lilypond.org})\\
+and EES Tools v2026.01.0 (\url{https://github.com/edition-esser-skala/ees-tools}).\\
+Front matter typeset with Source Sans and Fredericka the Great.\\
+We appreciate your feedback to \url{edition@esser-skala.at}.
+
+\vspace*{2cm}%
 
 \tableofcontents
 \InputIfFileExists{scores/2/full_score.toc}{}{}
@@ -80,7 +103,11 @@ Matthäus Gugl was born around 1683 in Těchlovice (Czech Republic). Nothing is 
 
 Gugl achieved lasting renown through his treatise on figured bass, \textit{Fundamenta partiturae in compendio data} (GuglW 1), which appeared in at least five printed editions and was modeled on Samber's music-theoretical writings, especially \textit{Manducatio ad organum} (Salzburg, 1704) \parencite{Federhofer1964,Kohlschütter1979,Fuchs2021}. Gugl dedicated his work to the Prince-Archbishop of Salzburg, Jakob Ernst Graf von Liechtenstein-Kastelkorn (1690–1747) \parencite{Sehnal2018}. The \textit{Fundamenta} was widely disseminated; some contemporary Czech translations are also known \parencite{Pulkert2014,Prendl2015,Ludvova1985,Kacic2018,Sehnal1982}.
 
-Only a few of his compositions have survived. The Opus 1, as Gugl himself designated it, is \textit{Corona stellarum duodecim} (GuglW 2), a collection of twelve Loreto litanies for four- or five-part choir, two violins, and organ \parencite{FederhoferKönigs1996}. It was published in 1710 and is dedicated to Ernst Maximilian Graf von Scherffenberg (1673–1713), provost of Salzburg Cathedral. The \textit{Missa Sanctissimae Trinitatis} (GuglW 3), with its instrumentation (four-part solo ensemble, choir, two violins, two violas, two trumpets, timpani, bass section) and its scope, stands in the tradition of Baroque solemn mass. The year 1712, mentioned in the only surviving source, suggests that the mass was composed for the tenth anniversary of the completion of the Salzburg Trinity Church. Finally, another vocal work is the offertory \textit{Quae est ista} (GuglW 4). Gugl's surviving instrumental works comprise preludes and versets (GuglW 5). These are preserved in two sources: a manuscript from the estate of P. Martin Bischofreiter OSB in the music archive of St. Peter's Archabbey \parencite{Pagitsch2005,Eder2019}, and an autograph collection of versets by Joseph Baltasar Hochreither, now located in the Hamburg State and University Library Carl von Ossietzky \parencite{EsserSkala2026}.
+Only a few of Gugl's compositions have survived. The Opus 1, as Gugl himself designated it, is \textit{Corona stellarum duodecim} (GuglW 2), a collection of twelve Loreto litanies for four- or five-part choir, two violins, and organ \parencite{FederhoferKönigs1996}. It was published in 1710 and is dedicated to Ernst Maximilian Graf von Scherffenberg (1673–1713), provost of Salzburg Cathedral. The \textit{Missa Sanctissimae Trinitatis} (GuglW 3) stands in the tradition of the Baroque solemn mass due to its scope and scoring (four-part solo ensemble, choir, two violins, two violas, two trumpets, timpani, bass section). The only surviving source is dated 1712, suggesting that the mass was composed for the tenth anniversary of the completion of the Salzburg Trinity Church. Finally, another vocal work is the offertory \textit{Quae est ista} (GuglW 4). Gugl's extant instrumental works comprise preludes and versets (GuglW 5). These are preserved in two sources: in a manuscript from the estate of P. Martin Bischofreiter OSB in the music archive of St. Peter's Archabbey \parencite{Pagitsch2005,Eder2019}, and in an autograph collection of versets by Joseph Baltasar Hochreither, now located in the Hamburg State and University Library Carl von Ossietzky \parencite{EsserSkala2026}.
+
+In this volume, we provide first editions of Gugl's sacred vocal music, i.e., \textit{Corona stellarum duodecim} GuglW~2, \textit{Missa Sanctissimae Trinitatis} GuglW~3, and \textit{Quae est ista} GuglW~4. Performance materials for these works are freely available online. In addition, we include a thematic catalogue of Gugl's works (entitled “GuglW”) that describes all sources known as of 2026.
+
+\textit{Wolfgang Esser-Skala, Koppl, September 2026}
 
 \clearpage
 \printbibliography[heading=subbibintoc]
@@ -111,11 +138,12 @@ Jiří K. Kroupa (Nadace pro dějiny kultury ve střední Evropě, Praha),
 Adele Kuenrath (Bibliothek, Österreichische Akademie der Wissenschaften, Wien),
 Miroslav Lukeš (Moravské zemské muzeum, oddělení dějin hudby, Brno),
 Elias Mazzucco (The British Library, London),
-Klaus Petermayr und Magdalena Wieder (OÖ Landes-Kultur GmbH, Linz),
+Klaus Petermayr and Magdalena Wieder (OÖ Landes-Kultur GmbH, Linz),
 Manfred Sailer (Bibliothek, Benediktinerabtei Metten),
 Filipe Tavares (Stadtbücherei Bochum), and
 Ute-Eva Thiem (Musikarchiv, Benediktinerabtei Stift Göttweig)
-in locating extant items of the \textit{Fundamenta partiturae}.
+in locating extant items of the \textit{Fundamenta partiturae},
+and the assistance of Balázs Mikusi and Jennifer Ward (RISM Editorial Network) in updating the RISM records for sources of Gugl's works.
 
 We are also much obliged to Johannes Dandler and the Cantorey der Kirche der Barmherzigen Brüder Schärding am Inn for their modern first performance of Gugl’s mass on 24 May 2026.
 
@@ -128,9 +156,92 @@ for fruitful scientific discussions.
 \cleardoublepage
 \chapter{Catalogue of works}
 
+\section{General remarks}
+
 Works in the catalogue should be cited by the abbreviation “GuglW”, followed by the work number.
 
+\textsb{Scoring abbreviations} are used as defined by RISM (\url{https://opac.rism.info/scoring-abbreviations}):
+\begin{abbreviations}
+  \abbr{A}{alto}
+  \abbr{B}{bass}
+  \abbr{b}{basses}
+  \abbr{clno}{clarion}
+  \abbr{mdc}{maestro di cappella}
+  \abbr{org}{organ}
+  \abbr{S}{soprano}
+  \abbr{T}{tenor}
+  \abbr{timp}{timpani}
+  \abbr{vl}{violin}
+  \abbr{vla}{viola}
+  \abbr{vlne}{violone}
+\end{abbreviations}
 
+\textsb{Library sigla} are used as defined by RISM (\url{https://rism.info/community/sigla.html}):
+
+\begin{abbreviations}
+  \abbr{A-Gl}{Steiermärkische Landesbibliothek, Graz}
+  \abbr{A-GÖ}{Benediktinerabtei, Musikarchiv, Stift Göttweig}
+  \abbr{A-LIm}{Oberösterreichisches Landesmuseum - Musiksammlung, Linz}
+  \abbr{A-Iu}{Universitäts- und Landesbibliothek Tirol, Innsbruck}
+  \abbr{A-KR}{Benediktinerstift, Musikarchiv, Kremsmünster}
+  \abbr{A-LA}{Benediktinerstift Lambach, Musikarchiv, Lambach}
+  \abbr{A-Sd}{Dom-Musikarchiv, Salzburg}
+  \abbr{A-Sm}{Internationale Stiftung Mozarteum, Bibliotheca Mozartiana, Salzburg}
+  \abbr{A-Sn}{Benediktinenstift Nonnberg, Bibliothek, Salzburg}
+  \abbr{A-Ssm}{Salzburg Museum - Bibliothek}
+  \abbr{A-Ssp}{Erzabtei St. Peter, Musikalienarchiv, Salzburg}
+  \abbr{A-Su}{Universitätsbibliothek, Salzburg}
+  \abbr{A-Waw}{Österreichische Akademie der Wissenschaften, Kommission für Musikforschung, Wien}
+  \abbr{A-Wgm}{Gesellschaft der Musikfreunde in Wien, Archiv, Wien}
+  \abbr{A-Wmi}{Universitätsbibliothek, Fachbibliothek Musikwissenschaft, Wien}
+  \abbr{A-Wn}{Österreichische Nationalbibliothek, Musiksammlung, Wien}
+  \abbr{B-Bc}{Conservatoire royal de Bruxelles, Bibliothèque, Bruxelles}
+  \abbr{CH-Bu}{Universitätsbibliothek, Musiksammlung, Basel}
+  \abbr{CH-SGs}{Stiftsbibliothek, St. Gallen}
+  \abbr{CZ-Bm}{Moravské zemské muzeum, oddělení dějin hudby, Brno}
+  \abbr{CZ-Bsa}{Moravský zemský archiv v Brně, Brno}
+  \abbr{CZ-H}{Jiráskovo muzeum, Hronov}
+  \abbr{CZ-Pnm}{Národní muzeum - České muzeum hudby, Sbírka hudebněhist. oddělení, Praha}
+  \abbr{D-As}{Staats- und Stadtbibliothek, Augsburg}
+  \abbr{D-B}{Staatsbibliothek zu Berlin - Preußischer Kulturbesitz, Musikabteilung, Berlin}
+  \abbr{D-Bim}{Staatliches Institut für Musikforschung - Preußischer Kulturbesitz, Bibliothek, Berlin}
+  \abbr{D-BOCHs}{Stadtbücherei, Musikbücherei, Bochum}
+  \abbr{D-Bsommer}{Hans-Sommer-Archiv, Berlin}
+  \abbr{D-F}{Universitätsbibliothek J. C. Senckenberg. Abteilung Musik und Theater, Frankfurt/M.}
+  \abbr{D-FRu}{Universitätsbibliothek, Freiburg im Breisgau}
+  \abbr{D-Hs}{Staats- und Universitätsbibliothek Carl von Ossietzky, Musiksammlung, Hamburg}
+  \abbr{D-KA}{Badische Landesbibliothek, Musiksammlung, Karlsruhe}
+  \abbr{D-LEm}{Leipziger Stadtbibliothek - Musikbibliothek, Leipzig}
+  \abbr{D-Mbs}{Bayerische Staatsbibliothek München}
+  \abbr{D-MT}{Benediktinerabtei Metten, Bibliothek, Metten}
+  \abbr{D-MZFederhofer}{Privatbibliothek Prof. Dr. Hellmut Federhofer, Mainz}
+  \abbr{D-MZs}{Wissenschaftliche Stadtbibliothek, Mainz}
+  \abbr{D-OB}{Benediktinerabtei, Bibliothek, Ottobeuren}
+  \abbr{D-RETtib}{TIB Rethen, Magazin, Laatzen-Rethen}
+  \abbr{D-Rp}{Bischöfliche Zentralbibliothek, Proskesche Musikabteilung, Regensburg}
+  \abbr{D-Us}{Stadtbibliothek, Ulm}
+  \abbr{D-WÜu}{Julius-Maximilians-Universität, Universitätsbibliothek, Würzburg}
+  \abbr{F-Pn}{Bibliothèque nationale de France, Département de la Musique, Paris}
+  \abbr{GB-Ge}{University Library, Euing Music Collection, Glasgow}
+  \abbr{GB-Lbl}{The British Library, London}
+  \abbr{H-Bami}{Magyar Tudományos Akadémia Zenetudományi Intézet Könyvtára, Budapest}
+  \abbr{H-Bl}{Liszt Ferenc Zeneművészeti Főiskola Könyvtára, Budapest}
+  \abbr{H-Bn}{Országos Széchényi Könyvtár, Budapest}
+  \abbr{NL-DHnmi}{Gemeentemuseum Den Haag}
+  \abbr{NL-Uim}{Universiteit Utrecht - Instituut voor Muziekwetenschap, Utrecht}
+  \abbr{US-AAu}{University of Michigan, Music Library, Ann Arbor, MI}
+  \abbr{US-BEm}{Jean Gray Hargrove Music Library - University of California, Berkeley, CA}
+  \abbr{US-CHH}{University of North Carolina (UNC), Music Library, Chapel Hill, NC}
+  \abbr{US-CHua}{University of Virginia, Edgar Shannon Library, Charlottesville, VA}
+  \abbr{US-Cn}{The Newberry Library, Chicago, IL}
+  \abbr{US-NH}{Yale University, Music Library, New Haven, CT}
+  \abbr{US-NYp}{New York Public Library for the Performing Arts, Music Division, New York City, NY}
+  \abbr{US-R}{Sibley Music Library, Eastman School of Music, University of Rochester, Rochester, NY}
+  \abbr{US-Wc}{The Library of Congress, Music Division, Washington, D.C.}
+\end{abbreviations}
+
+
+\clearpage
 \section{GuglW 1: Fundamenta partiturae}
 
 \subsection{1a: First edition, 1719}
@@ -150,26 +261,28 @@ Johann Joseph Mayr, Salzburg, 1719
 FUNDAMENTA | PARTITURÆ IN COMPENDIO | DATA. | Das iſt: | Kurtzer/und gründlicher Unterricht/ | Den | General-Baſs, oder Partitur nach denen Reglen recht und | wohl ſchlagen zu lehrnen. | In den Druck gegeben | Von | MATTHÆO GUGL, | Hochfürſtlich=Saltzburgiſchen Thum= und Stüfft=Organiſten. | In dem Jahr Chriſti 1719. | CUM LICENTIA SUPERIORUM. | Zu finden bey dem Authore. | SALZBURG/ | Gedruckt bey Johann Joſeph Mayr/ Hof= und Academiſchen Buchdruckern/ und Handlern.
 
 \textsb{Contents}\\
-fol. 1r: title page; 1v: empty; 2r–4r: dedication (“Dem Hochwürdig= Hoch= und Wohlgebohrnen …”); 4v: foreword (“Geneigter Leſer …”); 5r–29v: text, pages numbered 1 to 50
+\textit{fol.~1r}:~title page; \textit{1v}:~empty; \textit{2r–4r}:~dedication (“Dem Hochwürdig= Hoch= und Wohlgebohrnen …”); \textit{4v}:~foreword (“Geneigter Leſer …”); \textit{5r–29v}:~text, pages numbered 1 to 50
 
-\textsb{Locations}\\[1ex]
-\begin{tabularx}{\textwidth}{llX}
+\textsb{Locations}
+\begin{xltabular}{\textwidth}{llX}
   \toprule
   \itshape siglum & \itshape shelfmark & \itshape link \\
   \midrule
-  A-LIm & I-5546 & \url{https://permalink.obvsg.at/lbo/AC17845050} \\
-  A-Ssm & 20739 & \url{https://permalink.obvsg.at/mca/SMSBG0085465} \\
-  D-Mbs & Mus.th. 1424 nb & \url{https://mdz-nbn-resolving.de/urn:nbn:de:bvb:12-bsb10598643-5} \\
-  D-Rp & 9995 Th 326b & \url{https://katalog.uni-regensburg.de/vufind/Record/DE-604.BV001600974} \\
+  \endhead
+  A-LIm & I-5546 & \scriptsize\url{https://permalink.obvsg.at/lbo/AC17845050} \\
+  A-Ssm & 20739 & \scriptsize\url{https://permalink.obvsg.at/mca/SMSBG0085465} \\
+  D-Mbs & Mus.th. 1424 nb & \scriptsize\url{https://mdz-nbn-resolving.de/urn:nbn:de:bvb:12-bsb10598643-5} \\
+  D-Rp & 9995 Th 326b & \scriptsize\url{https://katalog.uni-regensburg.de/vufind/Record/DE-604.BV001600974} \\
   H-Bami & 601.617 & \\
   \midrule
   \multicolumn{3}{l}{\itshape Lost items} \\
-  A-Sn & \multicolumn{2}{l}{catalogued as lost by \textcite{Wessely1957}} \\
-  A-Ssp & \multicolumn{2}{l}{reported by \textcite{Wessely1957}, not extant as of 2026-04} \\
+  A-Sn & \multicolumn{2}{l}{catalogued as lost by \textcite{Wessely1957}, also not extant as of 2026-04} \\
+  A-Ssp & \multicolumn{2}{l}{reported by \textcite{Wessely1957}, but not extant as of 2026-04} \\
   \bottomrule
-\end{tabularx}
+\end{xltabular}
 
 
+\clearpage
 \subsection{1b: Second edition, 1727}
 
 \textsb{Publication, dating}\\
@@ -187,27 +300,28 @@ Matthias Wolff, Augsburg, 1727
 FUNDAMENTA | PARTITURÆ | IN COMPENDIO DATA. | Das iſt: | Kurtzer/und gründlicher Unterricht/ | Den | General-Baſs, oder Partitur, nach denen Reglen | recht und wohl ſchlagen zu lehrnen. | In den Druck gegeben | Von | MATTHÆO GUGL, | Hoch=Fürſtlich=Saltzburgiſchen Dom= und Stüfft=Organiſten. | CUM LICENTIA SUPERIORUM. | AUGSPURG | In Verlag Mathiæ Wolffs / Buch= Händlern / nächſt Unſer Lieben Frauen Thor. | Gedruckt / bey Johann Michael Labhart / Hoch=Fürſtl: Biſchöffl: und Stadt=Buchdrucker. 1727.
 
 \textsb{Contents}\\
-fol. 1r: title page; 1v: foreword (“Geneigter Leſer …”); 2r–26v: text, pages numbered 1 to 50
+\textit{fol. 1r}:~title page; \textit{1v}:~foreword (“Geneigter Leſer …”); \textit{2r–26v}:~text, pages numbered 1 to 50
 
-\textsb{Locations}\\[1ex]
-\begin{tabularx}{\textwidth}{llX}
+\textsb{Locations}
+\begin{xltabular}{\textwidth}{llX}
   \toprule
   \itshape siglum & \itshape shelfmark & \itshape link \\
   \midrule
-  D-As & Tonk 168 & \url{https://mdz-nbn-resolving.de/urn:nbn:de:bvb:12-bsb11297382-0} \\
+  \endhead
+  D-As & Tonk 168 & \scriptsize\url{https://mdz-nbn-resolving.de/urn:nbn:de:bvb:12-bsb11297382-0} \\
   D-B & Gg 462 & \\
   D-Bsommer & Mus.pr.theor. Gugl 1 & \\
   D-LEm & I 4° 274 & \\
   GB-Ge & Sp Coll E.b.25 & \\
-  GB-Lbl & Hirsch IV.1501. & \url{https://catalogue.bl.uk/permalink/44BL_MAIN/19agrh4/alma990015363180109251} \\
+  GB-Lbl & Hirsch IV.1501. & \scriptsize\url{https://catalogue.bl.uk/permalink/44BL_MAIN/19agrh4/alma990015363180109251} \\
   \midrule
   \multicolumn{3}{l}{\itshape Lost items} \\
-  B-Bc & \multicolumn{2}{l}{reported by \textcite{Wessely1957}, not extant as of 2026-08} \\
+  B-Bc & \multicolumn{2}{l}{reported by \textcite{Wessely1957}, but not extant as of 2026-08} \\
   \bottomrule
-\end{tabularx}
+\end{xltabular}
 
 
-
+\clearpage
 \subsection{1c: Third edition, 1757}
 
 \textsb{Publication, dating}\\
@@ -225,43 +339,45 @@ Joseph Wolff, Augsburg–Innsbruck, 1757
 FUNDAMENTA | PARTITURÆ | IN COMPENDIO DATA. | Das iſt: | Kurtzer und gründlicher Unterricht, | Den | General-Baſs, oder Partitur, nach denen Reglen | recht und wohl ſchlagen zu lernen. | In den Druck gegeben | von | MATTHÆO GUGL, | Hoch=Fürſtlich=Saltzburgiſchen Dom= und Stifft=Organiſten. | Cum Licentia Superiorum. | Augſpurg und Inſprugg, | In Verlag Joſeph Wolffs, Buchhändlers, 1757.
 
 \textsb{Contents}\\
-fol. 1r: title page; 1v: foreword (“Geneigter Leſer …”); 2r–26v: text, pages numbered 1 to 50
+\textit{fol. 1r:}~title page; \textit{1v:}~foreword (“Geneigter Leſer …”); \textit{2r–26v:}~text, pages numbered 1 to 50
 
-\textsb{Locations}\\[1ex]
-\begin{tabularx}{\textwidth}{llX}
+\textsb{Locations}
+\begin{xltabular}{\textwidth}{llX}
   \toprule
   \itshape siglum & \itshape shelfmark & \itshape link \\
   \midrule
+  \endhead
   A-Gl & 47894 II \\
   A-Iu & 210.784 \\
   A-Sn & 66 II.m \\
-  A-Ssm & 20740 & \url{https://permalink.obvsg.at/mca/SMSBG0085467} \\
-  A-Su & I 5221 & \url{https://ubsearch.sbg.ac.at/permalink/f/16hc907/USB_alma21126417820003341} \\
+  A-Ssm & 20740 & \scriptsize\url{https://permalink.obvsg.at/mca/SMSBG0085467} \\
+  A-Su & I 5221 & \scriptsize\url{https://ubsearch.sbg.ac.at/permalink/f/16hc907/USB_alma21126417820003341} \\
   CH-Bu & kk III 30 \\
   CZ-Pnm & D 041 \\
   D-B & Gg 462\_2 \\
   D-FRu & F 9257 \\
-  D-KA & M 29201 RH & \url{https://rds-blb.ibs-bw.de/link?kid=774972033} \\
+  D-KA & M 29201 RH & \scriptsize\url{https://rds-blb.ibs-bw.de/link?kid=774972033} \\
+  D-Mbs & B.Sandb. 322 & \scriptsize\url{https://mdz-nbn-resolving.de/urn:nbn:de:bvb:12-bsb10271108-6} \\
   D-MZs & III i:4º /110 b \\
-  D-Mbs & B.Sandb. 322 & \url{https://mdz-nbn-resolving.de/urn:nbn:de:bvb:12-bsb10271108-6} \\
   D-RETtib & f 4639 \\
-  D-Rp & 9995 Th 326 & \url{https://katalog.uni-regensburg.de/vufind/Record/DE-604.BV001600975} \\
+  D-Rp & 9995 Th 326 & \scriptsize\url{https://katalog.uni-regensburg.de/vufind/Record/DE-604.BV001600975} \\
   D-Us & 17 063 \\
-  GB-Lbl & B.805 & \url{https://catalogue.bl.uk/permalink/44BL_MAIN/i1aea3/alma99217091110409251} \\
+  GB-Lbl & B.805 & \scriptsize\url{https://catalogue.bl.uk/permalink/44BL_MAIN/i1aea3/alma99217091110409251} \\
   H-Bl & RK 1.008  \\
   NL-Uim & ODC 468 obl \\
-  US-Cn & minus VMT 49\newline.G942f 1757 & \url{https://i-share-nby.primo.exlibrisgroup.com/permalink/01CARLI_NBY/1igqgvp/alma994136558805867} \\
-  US-NYp & MICROFILM 1745 & \url{https://www.nypl.org/research/research-catalog/bib/pb9953003503506421} \\
+  US-Cn & minus VMT 49\newline.G942f 1757 & \scriptsize\url{https://i-share-nby.primo.exlibrisgroup.com/permalink/01CARLI_NBY/1igqgvp/alma994136558805867} \\
+  US-NYp & MICROFILM 1745 & \scriptsize\url{https://www.nypl.org/research/research-catalog/bib/pb9953003503506421} \\
   US-Wc & MT49.A2 G9 \\
   \midrule
   \multicolumn{3}{l}{\itshape Lost items} \\
-  A-GÖ & \multicolumn{2}{l}{formerly listed in RISM, not extant as of 2026-08} \\
-  D-MT & \multicolumn{2}{l}{formerly listed in RISM, not extant as of 2026-08} \\
-  US-CHua & \multicolumn{2}{l}{formerly listed in RISM, not extant as of 2026-08} \\
+  A-GÖ & \multicolumn{2}{l}{formerly listed in RISM, but not extant as of 2026-08} \\
+  D-MT & \multicolumn{2}{l}{formerly listed in RISM, but not extant as of 2026-08} \\
+  US-CHua & \multicolumn{2}{l}{formerly listed in RISM, but not extant as of 2026-08} \\
   \bottomrule
-\end{tabularx}
+\end{xltabular}
 
 
+\clearpage
 \subsection{1d: Fourth edition, 1777}
 
 \textsb{Publication, dating}\\
@@ -279,47 +395,49 @@ Joseph Wolff, Augsburg, 1777
 FUNDAMENTA | PARTITVRAE | IN COMPENDIO DATA. | Das iſt: | Kurzer und gründlicher Unterricht, | den | General-Baſs, oder die Partitur nach den Regeln | recht und wohl ſchlagen zu lernen. | Verfaßt | von | MATTHAEO GVGL, | Hochfürſtlich=Salzburgiſchen Domſtifts=Organiſten. | Augsburg, | im Verlag bey Joſeph Wolf, 1777.
 
 \textsb{Contents}\\
-fol. 1r: title page; 1v: foreword (“Geneigter Leſer …”); 2r–26v: text, pages numbered 3 to 52
+\textit{fol. 1r:}~title page; \textit{1v:}~foreword (“Geneigter Leſer …”); \textit{2r–26v:}~text, pages numbered 3 to 52
 
-\textsb{Locations}\\[1ex]
-\begin{tabularx}{\textwidth}{llX}
+\textsb{Locations}
+\begin{xltabular}{\textwidth}{llX}
   \toprule
   \itshape siglum & \itshape shelfmark & \itshape link \\
   \midrule
-  A-Sm & Rara Lit 425 & \url{https://permalink.obvsg.at/ism/AC09581614} \\
-  A-Ssm & 20744 & \url{https://permalink.obvsg.at/mca/SMSBG0085471} \\
+  \endhead
+  A-Sm & Rara Lit 425 & \scriptsize\url{https://permalink.obvsg.at/ism/AC09581614} \\
+  A-Ssm & 20744 & \scriptsize\url{https://permalink.obvsg.at/mca/SMSBG0085471} \\
+  A-Waw & MUS-W1419-A & \scriptsize\url{https://www.oeaw.ac.at/resources/Record/990002527990504498} \\
   A-Wgm & 876/38 \\
-  A-Waw & MUS-W1419-A & \url{https://www.oeaw.ac.at/resources/Record/990002527990504498} \\
-  A-Wmi & B-5626 & \url{https://ubdata.univie.ac.at/AC09581614} \\
-  A-Wn & SA.72.F.48 & \url{https://data.onb.ac.at/rep/10596F16} \\
+  A-Wmi & B-5626 & \scriptsize\url{https://ubdata.univie.ac.at/AC09581614} \\
+  A-Wn & SA.72.F.48 & \scriptsize\url{https://data.onb.ac.at/rep/10596F16} \\
   CZ-Bm & D 10 \\
-  D-As & Tonk 169 & \url{https://mdz-nbn-resolving.de/urn:nbn:de:bvb:12-bsb11297383-6} \\
+  D-As & Tonk 169 & \scriptsize\url{https://mdz-nbn-resolving.de/urn:nbn:de:bvb:12-bsb11297383-6} \\
   D-B & Gg 462\_3 \\
-  D-Bim & Hg 8 & \url{https://opac.sim.spk-berlin.de/XMLPRS=N/PPN?PPN=654932018} \\
+  D-Bim & Hg 8 & \scriptsize\url{https://opac.sim.spk-berlin.de/XMLPRS=N/PPN?PPN=654932018} \\
   D-F & Mus W 194 \\
-  D-MZfederhofer & (no shelfmark) \\
   D-Mbs & Mus.th. 1424 n \\
+  D-MZfederhofer & (no shelfmark) \\
   D-Us & 17 064 \\
-  GB-Lbl & B.805a. & \url{https://catalogue.bl.uk/permalink/44BL_MAIN/i1aea3/alma990040569960109251} \\
+  GB-Lbl & B.805a. & \scriptsize\url{https://catalogue.bl.uk/permalink/44BL_MAIN/i1aea3/alma990040569960109251} \\
   NL-DHnmi & NMI mf VIII/295 \\
-  US-AAu & MT 49 .G94 1777 & \url{https://search.lib.umich.edu/catalog/record/990019806540106381} \\
-  US-BEm & MT49.A2 G9 2002 & \url{https://search.library.berkeley.edu/permalink/01UCS_BER/ergbi/alma991046831679706532} \\
-  US-CHH & MT49 .G85 1777 & \url{https://archive.org/details/fundamentapartit00gugl} \\
-  US-Cn & minus VMT 49 .G942f 1777 & \url{https://i-share-nby.primo.exlibrisgroup.com/permalink/01CARLI_NBY/1igqgvp/alma994136688805867} \\
+  US-AAu & MT 49 .G94 1777 & \scriptsize\url{https://search.lib.umich.edu/catalog/record/990019806540106381} \\
+  US-BEm & MT49.A2 G9 2002 & \scriptsize\url{https://search.library.berkeley.edu/permalink/01UCS_BER/ergbi/alma991046831679706532} \\
+  US-Cn & minus VMT 49 .G942f 1777 & \scriptsize\url{https://i-share-nby.primo.exlibrisgroup.com/permalink/01CARLI_NBY/1igqgvp/alma994136688805867} \\
+  US-CHH & MT49 .G85 1777 & \scriptsize\url{https://archive.org/details/fundamentapartit00gugl} \\
   US-NH & MT49 G942 \\
-  US-NYp & Mus. Res. *MI & \url{https://www.nypl.org/research/research-catalog/bib/b14407202} \\
+  US-NYp & Mus. Res. *MI & \scriptsize\url{https://www.nypl.org/research/research-catalog/bib/b14407202} \\
          & (Gugl, M. Fvndamenta \\
          & partitvræ in \\
          & compendio data) \\
-  US-R & MT44 .M948 & \url{http://hdl.handle.net/1802/39002} \\
+  US-R & MT44 .M948 & \scriptsize\url{http://hdl.handle.net/1802/39002} \\
   US-Wc & MT49 .G9 1777 Case \\
   \midrule
   \multicolumn{3}{l}{\itshape Lost items} \\
-  D-BOCHs & \multicolumn{2}{l}{formerly listed in RISM, not extant as of 2026-08} \\
+  D-BOCHs & \multicolumn{2}{l}{formerly listed in RISM, but not extant as of 2026-08} \\
   \bottomrule
-\end{tabularx}
+\end{xltabular}
 
 
+\clearpage
 \subsection{1e: Fifth edition, 1805}
 
 \textsb{Publication, dating}\\
@@ -330,8 +448,6 @@ Johann Jakob Lotter und Sohn, Augsburg, 1805
 
 \textsb{Physical description}\\
 TBD
-% 1 book (26 fol.)\\
-% 4°, oblong
 
 \textsb{Title page}\\
 \textit{[fol. 1r]}\\
@@ -339,21 +455,22 @@ FUNDAMENTA | PARTITVRAE | IN COMPENDIO DATA. | Das iſt: | Kurzer und gründlich
 
 \textsb{Contents}\\
 TBD
-% fol. 1r: title page; 1v: foreword (“Geneigter Leſer …”); 2r–26v: text, pages numbered 3 to 52
 
-\textsb{Locations}\\[1ex]
-\begin{tabularx}{\textwidth}{llX}
+\textsb{Locations}
+\begin{xltabular}{\textwidth}{llX}
   \toprule
   \itshape siglum & \itshape shelfmark & \itshape link \\
   \midrule
+  \endhead
   CH-SGs & 3235 & \\
   D-MT & Mus. pr. 254 & \\
   D-WÜu & 59/L 60.5 & \\
-  F-Pn & 4-VM8-376 & \url{https://catalogue.bnf.fr/ark:/12148/cb43031423h} \\
+  F-Pn & 4-VM8-376 & \scriptsize\url{https://catalogue.bnf.fr/ark:/12148/cb43031423h} \\
   \bottomrule
-\end{tabularx}
+\end{xltabular}
 
 
+\clearpage
 \subsection{Other sources}
 
 There are also several known manuscript copies of the \textit{Fundamenta}:
@@ -362,20 +479,30 @@ There are also several known manuscript copies of the \textit{Fundamenta}:
   \toprule
   \itshape siglum & \itshape shelfmark & \itshape notes \\
   \midrule
-  A-Wmi & MUWI/99/099/1 & now in the archive of the institute \\
-  (ACECS) & (none) & \textcite{Pulkert2014}; presumably in his estate at ACECS, which is unprocessed as of 2026-08 \\
-  CZ-Bm & A 36648 & \textcite{Prendl2015,Fuchs2021} \\
-  CZ-Bsa & fund F-27, box 8 & \textcite{Ludvova1985}, R-4; by Jan Tiray \\
-  CZ-H & C 247 & \textcite{Ludvova1985}, R-7 \\
-  CZ-Pnm & XX B 350 & \textcite{Ludvova1985}, R-8 \\
-  D-Mbs & Mus.ms. 261 & \textcite{Prendl2015} \\
+  A-Wmi & MUWI/99/099/1 & described by \textcite[p. 163f]{Wessely1957}, now in the archive of the institute \\
+  (ACECS) & (none) & source for the transcription by \textcite{Pulkert2014}; presumably archived in his estate at the Association for Central European Cultural Studies, which is unprocessed as of 2026-08 \\
+  CZ-Bm & A 36648 & described by \textcite{Prendl2015} \\
+  CZ-Bsa & fund F-27, box 8 & written by Jan Tiray; source R-4 in \textcite[90]{Ludvova1985}; also described by \textcite[31]{Sehnal1982} \\
+  CZ-H & C 247 & source R-7 in \textcite[92]{Ludvova1985} \\
+  CZ-Pnm & XX B 350 & source R-8 in \textcite[p. 92f]{Ludvova1985} \\
+  D-Mbs & Mus.ms. 261 & mentioned in \textcite{Prendl2015} \\
+  H-Bn & Ms. Mus. 749 & written by P. Pantaleon Roškovský OFM; described in \textcite{Kacic2018} \\
   \bottomrule
 \end{tabularx}
 
 
 \subsection{Spurious 1762 edition}
 
-\textcite{Wessely1957} listed an edition dated 1762, for which there is only evidence in several catalogues by the antiquarian bookshop Ackermann, München (e.g. no. 211 (1888), p. 9: “240 Gugl, M., Fundamenta partiturae in compend. data oder gründl. Unterricht d. Generalbass wohl schlagen zu lernen. M. vielen Notenbeisp. 4. Salzb. 1762. cart.”). Since not a single item of this print has surfaced over the centuries, it is highly doubtful that it ever existed.
+\textcite[p. 62, no. 6]{Wessely1957} listed an edition dated 1762, for which there is only evidence in several catalogues by the antiquarian bookshop Ackermann, München (e.g. no. 211 (1888), p. 9: “240 Gugl, M., Fundamenta partiturae in compend. data oder gründl. Unterricht d. Generalbass wohl schlagen zu lernen. M. vielen Notenbeisp. 4. Salzb. 1762. cart.”). Since not a single item of this print has surfaced over the centuries, it is highly doubtful that it ever existed.
+
+
+\subsection{Modern editions}
+
+\begin{bulletlist}
+  \item N.N. (2002). \textit{Mattheo Gugl: a) Fundamenta Partiturae ... Kurtzer und gründlicher Unterricht, Den GeneralBass...; Augsburg, Innsbruck, J. Wolff; Druck Wagner, Ulm 1757; b) Fundamenta Partitarae ... Kurtzer und gründlicher Unterricht, Den GeneralBass...; Augsburg, J. Wolf; Druck Wagner, Ulm 1777} [Facsimile]. Cornetto-Verlag, CF234/FEU25.
+  \item Pulkert, O. (2014). \textit{Fundamenta Partiturae in Compendio: To jest Krátká a dokonalá zpráva, kterak se General Bass kučení podle pravidel předkládati může.} Edition Resonus.
+  \item Fuchs, S. (2026). TBD.
+\end{bulletlist}
 
 
 \clearpage
@@ -425,7 +552,7 @@ Salzburg, 1710
   \item \textit{Causa nostrae laetitiae (longissimae)}\\\relax
     [no tempo], C dorian, \meterthreefour, 345 bars\\
     soli (S, A, T, B), coro (S, A, T, B), 2 vl, vlne, org\\
-    \textlt{Kyrie eleison (67) · Sancta Maria (23) · Virgo prudentissima (84) · Rosa mystica (48) · Regina Angelorum (37) · Agnus Dei (86)}
+    \textlt{Kyrie eleison (67) · Sancta Maria (23) · Virgo prudentissima (84) · Rosa mystica (48) ·\\Regina Angelorum (37) · Agnus Dei (86)}
 
     \includegraphics{incipits/2/5_causa}
 
@@ -439,7 +566,7 @@ Salzburg, 1710
   \item \textit{Consolatrix afflictorum}\\\relax
     Adagio, D dorian, \metercut, 238 bars\\
     soli (S, A, T, B), coro (S, A, T, B), 2 vl, vlne, org\\
-    \textlt{Kyrie eleison (7) · Pater de coelis (71) · Virgo prudentissima (23) · Rosa mystica (29) · Salus infirmorum (42) · Agnus Dei (66)}
+    \textlt{Kyrie eleison (7) · Pater de coelis (71) · Virgo prudentissima (23) · Rosa mystica (29) ·\\Salus infirmorum (42) · Agnus Dei (66)}
 
     \includegraphics{incipits/2/7_consolatrix}
 
@@ -453,7 +580,7 @@ Salzburg, 1710
   \item \textit{Mater Christi}\\\relax
     [no tempo], E minor, \metercut, 239 bars\\
     soli (S, A, T, B), coro (S, A, T, B), 2 vl, vlne, org\\
-    \textlt{Kyrie eleison (69) · Virgo prudentissima (94) · Salus infirmorum (18) · Regina Angelorum (25) · Agnus Dei (33)}
+    \textlt{Kyrie eleison (69) · Virgo prudentissima (94) · Salus infirmorum (18) · Regina Angelorum (25) ·\\Agnus Dei (33)}
 
     \includegraphics{incipits/2/9_mater}
 
@@ -467,7 +594,7 @@ Salzburg, 1710
   \item \textit{Stella matutina}\\\relax
     [no tempo], G dorian, \meterthreetwo, 253 bars\\
     soli (S, A, T, B), coro (S, A, T, B), 2 vl, vlne, org\\
-    \textlt{Kyrie eleison (64) · Sancta Maria (39) · Speculum iustitiae (58) · Stella matutina (15) · Regina Angelorum (17) · Agnus Dei (60)}
+    \textlt{Kyrie eleison (64) · Sancta Maria (39) · Speculum iustitiae (58) · Stella matutina (15) ·\\Regina Angelorum (17) · Agnus Dei (60)}
 
     \includegraphics{incipits/2/11_stella}
 
@@ -497,10 +624,14 @@ D-B DMS 217257
 \textsb{Publication, dating}\\
 Johann Joseph Mayr, Salzburg, 1710
 
-\textsb{Title page}\\
-\textit{[org part, fol. 1v]}\\
-CORONA | STELLARUM | DUODECIM. | ID EST | TOTIDEM | LITANIÆ | LAURETANO- | MARIANÆ, | SPECIALIBUS ENCOMIIS | MATRIS \& VIRGINIS | INTITULATÆ. | Partim à IV. partim à V. Vocibus, | \& II. Violinis in Concerto cum duplici Baſſo. | AUTHORE | MATTHÆO GUGL. | Anno à partu Virginis M.DCC.X. | in lucem datæ. | Opus I. ſumtibus Authoris. | ORGANO. | SALISBURGI, | Typis Joannis Joſephi Mayr, Typographi Aulico-Academici, \& Bibliopolæ.
+\pagebreak
+\begin{flushleft}
+  \textsb{Title page}\\
+  \textit{[org part, fol. 1v]}\\
+  \disablehyphenation CORONA | STELLARUM | DUODECIM. | ID EST | TOTIDEM | LITANIÆ | LAURETANO- | MARIANÆ, | SPECIALIBUS ENCOMIIS | MATRIS \& VIRGINIS | INTITULATÆ. | Partim à IV. partim à V. Vocibus, | \& II. Violinis in Concerto cum duplici Baſſo. | AUTHORE | MATTHÆO GUGL. | Anno à partu Virginis M.DCC.X. | in lucem datæ. | Opus I. ſumtibus Authoris. | ORGANO. | SALISBURGI, | Typis Joannis Joſephi Mayr, Typographi Aulico-Academici, \& Bibliopolæ.
+\end{flushleft}
 
+\vspace*{-\baselineskip}
 The title pages of the remaining parts are mostly identical, with the exception of (1) the line “Opus I. …”, which only appears in the org part, and (2) the part name, which is replaced by one of “CANTUS I.”, “CANTUS II.” “ALTUS.”, “TENOR.”, “BASSUS.”, “VIOLINO I.”, or “VIOLINO II.”. Notably, an incorrect date (“M.DDC.X.”) is printed on the S~2 part. At the bottom, an ownership mark was written in brown ink by an unknown hand: “Ad Chorum Eccleſiæ SS. Trinitatis Salisburgi.” (the last word only appears on the title pages of the S~1 and org parts).
 
 
@@ -529,6 +660,8 @@ The contents of the parts are as follows:
   \item[org] Part “7.”: flyleaf, title page (1r; Figure~\ref{fig:corona_title}), blank page (1v), dedication and introduction (2r–3v), music (4r–24v; Figure~\ref{fig:corona_org}), contents (bottom of 24r; Figure~\ref{fig:corona_index}), flyleaf. Part “8.” lacks dedication and introduction; thus, music and contents appear on fol. 2r–22r and 22v, respectively.
 \end{description}
 
+\vspace*{-\baselineskip}
+\begin{flushleft}
 The \textsb{dedication and introduction} (org part, fol. 2r–3v) read:
 \begin{description}[labelwidth=3em,leftmargin=3.5em]
   \item[fol. 2r] REVERENDISSIMO | AC | ILLUSTRISSIMO | DOMINO, DOMINO | MAXIMILIANO | ERNESTO, | COMITI AC DOMINO | A | SCHERFFENBERG, | Metropolit. Eccleſ. Salisburgenſis | PRÆPOSITO, | ET | ARCHI-PRESBYTERO. | PRÆPOSITO | Ad B. V. in Saal \& Isn. | Celſiſsimi ac Reverendiſsimi S.R.I.Prin- | cipis \& Archi-Epiſcopi Salisburgenſis. \&c. \&c. | CONSILIARIO INTIMO, | Nec non | Archi-Epiſcopalis Conſiſtorii ibidem | PRÆSIDI, \&c. | DOMINO DOMINO | GRATIOSISSIMO.
@@ -536,6 +669,7 @@ The \textsb{dedication and introduction} (org part, fol. 2r–3v) read:
   \item[fol. 3r] Myſtici facie \textit{marceſcant} potiùs in faſtidiô, quàm \textit{germi-} | \textit{nent} in complacentiâ. Sed nova titubantem animum | confirmat anchora. Enim verò | \textit{Aaronem} in Te cerno, Reverendiſſime ac Illuſtriſſi- | me Domine, Domine Comes \&c.\&c. Nam velut Illum | Archi-Myſtam Iſraël, ſic Te Salipolis \textit{Archi-Presbyterum} | adorat. \textit{Aaronem} Te nominat, quidquid virtutum in | ullô Eccleſiæ Duce coruſcum fuit. Aaronem Te dicit | ipſa Nominis Ethymologia. (Quid enim \textit{Aaron} aliud apud | interpretes, quàm \textit{Mons} eſt?) Tu \textit{Mons} in \textit{parte} Nominis | \& quoad \textit{totum} omen \textit{Mons, in quô beneplacitum eſt Deo}. | (e) \textit{Aaronem} Te prædicat Sanctiſſima religio, Pietas \& Di- | lectio Dei ac hominum, præſertim Afflictorum. Qua- | rum Virtutum Laudes, ne hâc anguſtâ Paginâ contineri | poſſe videantur, potiùs cum fama miror, quàm venâ ri- | mor; Cùm aliàs etiam in tantâ materiæ copiâ illis, qui lau- | di ſunt impares, præſtet tenere ſilentium, quàm dixiſſe | nimis parum. Quapropter admitte, Reverendiſſime ac | Illuſtriſſime Domine, Domine Comes \&c.\&c. Admit- | te, ut Illuſtriſſimum Tuum (Veri \textit{Aaronis}) \textit{Nomen} ſig- | netur in hiſce meis \textit{duodecim} Virgultis. Tunc enim verò | uberes complacentiæ flores in Mariano \textit{Fœderis Taberna-} | \textit{culo} penitus germinatura confido. In quam me ſpem po- | tiſſimùm erigit, quòd fatô benigniſſimô ad \textit{B.V. in Saal} | primâ dignitate fulgeas. Placebit utique \textit{Deiparæ} Muſi- | ca, quam auſpicatur \textit{Præpoſitus} in Ejus \textit{aulâ}! Ego verò | \textit{immarceſcibili} ſtudiô laudabo Dominum \textit{in Chordis \&} | \textit{Organô}, (f) qui Te poſt longa adhuc \& Polycratæis fau- | ſtiora ſæcula tot jam pleniſſimum meritis \textit{Aaronem} indu- | cat \textit{in Sanctum Sanctorum}. (g) Cui voto immoritur, Tuís- | que ſe Gratiis ſubmiſſiſſimè commendat | Reverendiſsimæ ac Illuſtriſsimæ | Dominationis Tuæ | [in tiny print:] Servus humillimus | MATTHÆUS GUGL. [footnote:] (e) \textit{Pſal.} 67.(f) \textit{Pſal.} 150. (g) \textit{Num.} 4.
   \item[fol. 3v] \textit{Ad Philomuſum.} | VLtimum hujus quantulicúnque operis objectum | fuiſſe Hyperduliam Deiparæ, Te monitum volo; Cujus ſpe- | cialibus (ut mihi videbatur) Encomiis ſingulas inſcripſi Li- | tanias. Mens equidem fuit olim, pro ſingulis Lauretani | Catalogi Titulis ſingulas etiam Litanias ordinare: ſed interim perſuaſum | eſt, è tali copiâ plus vilipenſionis quàm uſurpationis oriturum. His | itáque Primitiis meis quædam notanda præpono. Primum eſt, quôd | labor iſte meus aliorum tantùm inſtinctû \& petitô in lucem datus ad | illos Choros, qui perfunctoriæ brevitati ſtudent, deſervire non poſſit: | Confido tamen, acceptum fore penitus, ubi plenus \& tarditatis Patiens | Chorus habetur. Favente autem Jehovâ opus aliud locis votísque plu- | ribus accomodatum typus vulgabit, \& congrua brevitas commendabit. | Alterum eſt, quòd huic opuſculo meo frequenter hoc ſignum \slashedsix\ inſertum | videatur \& idem valet, ac \sharp{}6. Iſte autem character \natural{}\ tonum natura- | lem indicat. Scio quidem, aliquas ex his Litaniis à me jam ante po- | ſtulatas \& deſcriptas fuiſſe: Sed eædem ipſæ priùs (quoad fieri potuit) | abbreviatæ, correctæ \& omni meliori modô emendatæ ſunt, antequam | typo crederentur. Errores admodum paucos ſuſcipor: Quos tamen | à Typographo inſertos reviſio mea, licet ſolertiſſima, non correxit, ſcien- | tia cujúsque Phonaſci eluet facillimè. Cæterùm hoc opuſculum meum | nondum ex totô impreſſum in varias jam cenſuras impegiſſe comperi. | Nimirum ſuis etiam Primitiæ fructuum roduntur vermibus. Tu, Ob- | ſervandiſſime Muſicophile, cum hisce Maſtygibus laborem hunc meum | maſticare omittes facilè, cum opus eſſe primum \& quidem ab Autho- | re juvene \& recente productum cogitaveris. Hoc igitur age, fave ac | vale.
 \end{description}
+\end{flushleft}
 
 
 \subsubsection{(2) Manuscript copy}
@@ -567,7 +701,7 @@ hand-ruled paper, 10 staves (10 mm)
 \textsb{Components and notes}\\[1ex]
 \begin{tabular}{ll}
   \toprule
-  Part & Folios \\
+  \itshape part & \itshape folios \\
   \midrule
   S solo and coro & 2 \\
   A solo and coro & 2 \\
@@ -580,7 +714,21 @@ hand-ruled paper, 10 staves (10 mm)
 
 Watermarks: (1) [coat of arms of Freiherr von Schönau] / ICF; and (2) [coat of arms of Freiherr von Schönau] / IMF. These watermarks indicate that the paper originates from the Ronsberg mill and was produced in ca.~1740 by Johann Carl Fischer or Johann Michael Fischer.
 
-The manuscript contains an arrangement of the 8th litany (\textit{Virgo prudentissima}) for four voices and continuo. See Table~\ref{tab:changes} and Figure~\ref{fig:corona_intro} for a comparison to the original version.
+The manuscript contains an arrangement of the 8th litany (\textit{Virgo prudentissima}) for four voices and continuo, displaying the following differences:
+
+\begin{tabularx}{\textwidth}{lllX}
+  \toprule
+  & \multicolumn{2}{l}{\itshape bars in source} \\
+  \cmidrule{2-3}
+  \itshape section & (1) & (2) & \itshape differences \\
+  \midrule
+  Kyrie eleison & 1–80 & 1–60 & 3/4 time; bars with vl solos removed (see Figure~\ref{fig:corona_intro}) \\
+  Sancta Maria & 81–106 & 61–85 & almost identical (one bar removed) \\
+  Virgo prudentissima & 107–163 & 86–136 & vl solos (bars 127–130 and 148–149) removed \\
+  Rosa mystica & 164–192 & 137–165 & identical \\
+  Agnus Dei & 193–213 & 166–186 & identical \\
+  \bottomrule
+\end{tabularx}
 
 
 
@@ -623,6 +771,7 @@ Salzburg, 1712
 
     \includegraphics{incipits/3/3_credo}
 
+  \pagebreak
   \item \textit{Sanctus}\\\relax
     [no tempo], C major, \meterthreefour, 113 bars\\
     soli (S, A, T), coro (S, A, T, B), 2 clno, timp, 2 vl, 2 vla, vlne, org\\
@@ -665,6 +814,7 @@ A-KR C 12/691
 \textsb{Scribes}\\
 unidentified (black ink)
 
+\pagebreak
 \textsb{Title page}\\
 \textit{[wrapper, fol. 1r]}\\
 Missa | SS|m|a|e Trinitatis | à | 4. Voci. | 2. Violini. | 2. Viole | 2. Clarini | Timpani | Organo con Violone | e | Basso per la Batutta. | L.H. | Auth. Matthaeo | Gugl. | 1712.
@@ -677,7 +827,7 @@ hand-ruled paper, 10–11 staves (11 mm)
 \textsb{Components and notes}\\[1ex]
 \begin{tabular}{lll}
   \toprule
-  Part & Folios & Notes \\
+  \itshape part & \itshape folios & \itshape notes \\
   \midrule
   S solo and coro & 4 \\
   A solo and coro & 5 & Figure~\ref{fig:missa_alto} \\
@@ -753,7 +903,7 @@ hand-ruled paper, 10 staves (10 mm)
 \textsb{Components and notes}\\[1ex]
 \begin{tabular}{lll}
   \toprule
-  Part & Folios & Notes \\
+  \itshape part & \itshape folios & \itshape notes \\
   \midrule
   S coro & 2 & Figure~\ref{fig:quae_soprano}\\
   A coro & 2 \\
@@ -784,12 +934,12 @@ Salzburg, ca. 1710–20
 
 \subsection{Music}
 
-GuglW~5 comprises all known organ works, which are numbered consecutively as GuglW~5.1 etc. (first column in table below).
+This catalogue entry comprises all known organ works, which are numbered consecutively as GuglW~5.1 etc. (see first column in table below for the work subnumber).
 
 Source (1) comprises the following works:
 
 {\scriptsize
-\begin{xltabular}{\linewidth}{>{\sbseries}r r r >{\raggedright}p{3cm} r m{6cm} X}
+\begin{xltabular}{\textwidth}{>{\sbseries}r r r >{\raggedright}p{3cm} r m{6cm} X}
   \toprule
     &
     \itshape p. &
@@ -804,151 +954,151 @@ Source (1) comprises the following works:
   \endfoot
 
   \tablesectionb{Primus tonus (D dorian), p. 1–9}
-  1 & 1 & 1 & Gugl | Praeludium | 1mi Toni | ex D:m. del M: Gugl. & 7 & \includegraphics{incipits/5/1_1} & \\
-  – & 1 & 2 & Caſpar Kerl. | Verſus 1. & 6 & \includegraphics{incipits/5/1_2} & attributed to Kerll \\
-  2 & 1 & 3 & Verſus. 2. & 4 & \includegraphics{incipits/5/1_3} & \\
-  3 & 2 & 1 & Verſus. 3. & 12 & \includegraphics{incipits/5/2_1} & \\
-  4 & 2 & 2 & Verſus 4. & 10 & \includegraphics{incipits/5/2_2} & \\
-  5 & 2 & 3 & Verſus 5. & 13 & \includegraphics{incipits/5/2_3} & bars 7–13 on p. 3\\
-  6 & 3 & 1 & Finale. & 6 & \includegraphics{incipits/5/3_1} & \\
-  7 & 3 & 2 & Verſus 6. & 7 & \includegraphics{incipits/5/3_2} & \\
-  8 & 3 & 3 & Contra. [in pencil: 7] & 6 & \includegraphics{incipits/5/3_3} & \\
-  9 & 4 & 1 & Verſus. [in pencil: 8] & 6 & \includegraphics{incipits/5/4_1} & \\
-  10 & 4 & 2 & Verſus. [in pencil: 9] & 6 & \includegraphics{incipits/5/4_2} & \\
-  11 & 4 & 3 & Verſus. [in pencil: 10] & 6 & \includegraphics{incipits/5/4_3} & \\
-  12 & 4 & 4 & Verſus Contra.\newline [in pencil: 11] & 7 & \includegraphics{incipits/5/4_4} & \\
-  – & 4 & 5 & Verſus. [in pencil: 12] & 4 & \includegraphics{incipits/5/4_5} & same as GuglW 5.2 \\
-  13 & 5 & 1 & Verſus. [in pencil: 13] & 6 & \includegraphics{incipits/5/5_1} & \\
-  14 & 5 & 2 & [in pencil: 14] & 5 & \includegraphics{incipits/5/5_2} & \\
-  15 & 5 & 3 & Finale. & 3 & \includegraphics{incipits/5/5_3} & \\
-  16 & 6 & 1 & Præludium. & 6 & \includegraphics{incipits/5/6_1} & \\
-  17 & 6 & 2 & [in pencil: 15] & 4 & \includegraphics{incipits/5/6_2} & \\
-  18 & 6 & 3 & [in pencil: 16] & 7 & \includegraphics{incipits/5/6_3} & \\
-  19 & 7 & 1 & Verſus. [in pencil: 17] & 7 & \includegraphics{incipits/5/7_1} & \\
-  20 & 7 & 2 & Gugl Verſ: [in pencil: 18] & 6 & \includegraphics{incipits/5/7_2} & \\
-  21 & 7 & 3 & Verſ: [in pencil: 19] & 5 & \includegraphics{incipits/5/7_3} & \\
-  22 & 8 & 1 & Verſus. [in pencil: 20] & 9 & \includegraphics{incipits/5/8_1} & \\
-  23 & 8 & 2 & Verſ: [in pencil: 21] & 4 & \includegraphics{incipits/5/8_2} & \\
-  24 & 8 & 3 & Verſ: Contra. & 3 & \includegraphics{incipits/5/8_3} & \\
-  25 & 8 & 4 & Verſ: [in pencil: 23] & 5 & \includegraphics{incipits/5/8_4} & \\
-  26 & 9 & 1 & Verſ: Contra [in pencil: 24] & 5 & \includegraphics{incipits/5/9_1} & \\
-  27 & 9 & 2 & Verſ: [in pencil: 25] & 4 & \includegraphics{incipits/5/9_2} & \\
-  28 & 9 & 3 & Verſus. [in pencil: 26] & 5 & \includegraphics{incipits/5/9_3} & \\
-  29 & 9 & 4 & Præludium. & 7 & \includegraphics{incipits/5/9_4} & \\
+  1 & 1 & 1 & Gugl | Praeludium | 1mi Toni | ex D:m. del M: Gugl. & 7 & \includeincipit{1_1} & \\
+  – & 1 & 2 & Caſpar Kerl. | Verſus 1. & 6 & \includeincipit{1_2} & attributed to Kerll \\
+  2 & 1 & 3 & Verſus. 2. & 4 & \includeincipit{1_3} & \\
+  3 & 2 & 1 & Verſus. 3. & 12 & \includeincipit{2_1} & \\
+  4 & 2 & 2 & Verſus 4. & 10 & \includeincipit{2_2} & \\
+  5 & 2 & 3 & Verſus 5. & 13 & \includeincipit{2_3} & bars 7–13 on p. 3\\
+  6 & 3 & 1 & Finale. & 6 & \includeincipit{3_1} & \\
+  7 & 3 & 2 & Verſus 6. & 7 & \includeincipit{3_2} & \\
+  8 & 3 & 3 & Contra. [in pencil: 7] & 6 & \includeincipit{3_3} & \\
+  9 & 4 & 1 & Verſus. [in pencil: 8] & 6 & \includeincipit{4_1} & \\
+  10 & 4 & 2 & Verſus. [in pencil: 9] & 6 & \includeincipit{4_2} & \\
+  11 & 4 & 3 & Verſus. [in pencil: 10] & 6 & \includeincipit{4_3} & \\
+  12 & 4 & 4 & Verſus Contra.\newline [in pencil: 11] & 7 & \includeincipit{4_4} & \\
+  – & 4 & 5 & Verſus. [in pencil: 12] & 4 & \includeincipit{4_5} & same as GuglW 5.2 \\
+  13 & 5 & 1 & Verſus. [in pencil: 13] & 6 & \includeincipit{5_1} & \\
+  14 & 5 & 2 & [in pencil: 14] & 5 & \includeincipit{5_2} & \\
+  15 & 5 & 3 & Finale. & 3 & \includeincipit{5_3} & \\
+  16 & 6 & 1 & Præludium. & 6 & \includeincipit{6_1} & \\
+  17 & 6 & 2 & [in pencil: 15] & 4 & \includeincipit{6_2} & \\
+  18 & 6 & 3 & [in pencil: 16] & 7 & \includeincipit{6_3} & \\
+  19 & 7 & 1 & Verſus. [in pencil: 17] & 7 & \includeincipit{7_1} & \\
+  20 & 7 & 2 & Gugl Verſ: [in pencil: 18] & 6 & \includeincipit{7_2} & \\
+  21 & 7 & 3 & Verſ: [in pencil: 19] & 5 & \includeincipit{7_3} & \\
+  22 & 8 & 1 & Verſus. [in pencil: 20] & 9 & \includeincipit{8_1} & \\
+  23 & 8 & 2 & Verſ: [in pencil: 21] & 4 & \includeincipit{8_2} & \\
+  24 & 8 & 3 & Verſ: Contra. & 3 & \includeincipit{8_3} & \\
+  25 & 8 & 4 & Verſ: [in pencil: 23] & 5 & \includeincipit{8_4} & \\
+  26 & 9 & 1 & Verſ: Contra [in pencil: 24] & 5 & \includeincipit{9_1} & \\
+  27 & 9 & 2 & Verſ: [in pencil: 25] & 4 & \includeincipit{9_2} & \\
+  28 & 9 & 3 & Verſus. [in pencil: 26] & 5 & \includeincipit{9_3} & \\
+  29 & 9 & 4 & Præludium. & 7 & \includeincipit{9_4} & \\
   \midrule
 
   \tablesectionb{Secundus tonus (G dorian), p. 10–17}
-  30 & 10 & 1 & Gugl Præludium 2:|d|i Toni. & 7 & \includegraphics{incipits/5/10_1} & \\
-  31 & 10 & 2 & Verſus. & 6 & \includegraphics{incipits/5/10_2} & \\
-  32 & 10 & 3 & Verſ. & 7 & \includegraphics{incipits/5/10_3} & \\
-  33 & 11 & 1 & Verſus. & 18 & \includegraphics{incipits/5/11_1} & \\
-  34 & 11 & 2 & Verſus. & 6 & \includegraphics{incipits/5/11_2} & \\
-  35 & 12 & 1 & Gugl Præludi: & 5 & \includegraphics{incipits/5/12_1} & \\
-  36 & 12 & 2 & [no title] & 7 & \includegraphics{incipits/5/12_2} & \\
-  37 & 12 & 3 & Verſus. & 8 & \includegraphics{incipits/5/12_3} & \\
-  38 & 13 & 1 & Verſ: & 6 & \includegraphics{incipits/5/13_1} & \\
-  39 & 13 & 2 & [no title] & 8 & \includegraphics{incipits/5/13_2} & \\
-  40 & 13 & 3 & Finale. & 5 & \includegraphics{incipits/5/13_3} & \\
-  41 & 14 & 1 & Verſ: & 7 & \includegraphics{incipits/5/14_1} & \\
-  42 & 14 & 2 & Verſ: & 6 & \includegraphics{incipits/5/14_2} & \\
-  43 & 14 & 3 & Verſ: Contra. & 7 & \includegraphics{incipits/5/14_3} & \\
-  44 & 15 & 1 & [no title] & 6 & \includegraphics{incipits/5/15_1} & \\
-  45 & 15 & 2 & Verſus. & 11 & \includegraphics{incipits/5/15_2} & \\
-  46 & 15 & 3 & Verſus. & 9 & \includegraphics{incipits/5/15_3} & \\
-  47 & 16 & 1 & Verſ: & 6 & \includegraphics{incipits/5/16_1} & \\
-  48 & 16 & 2 & Verſus. & 10 & \includegraphics{incipits/5/16_2} & \\
-  49 & 17 & 1 & Verſ: & 8 & \includegraphics{incipits/5/17_1} & \\
+  30 & 10 & 1 & Gugl Præludium 2:|d|i Toni. & 7 & \includeincipit{10_1} & \\
+  31 & 10 & 2 & Verſus. & 6 & \includeincipit{10_2} & \\
+  32 & 10 & 3 & Verſ. & 7 & \includeincipit{10_3} & \\
+  33 & 11 & 1 & Verſus. & 18 & \includeincipit{11_1} & \\
+  34 & 11 & 2 & Verſus. & 6 & \includeincipit{11_2} & \\
+  35 & 12 & 1 & Gugl Præludi: & 5 & \includeincipit{12_1} & \\
+  36 & 12 & 2 & [no title] & 7 & \includeincipit{12_2} & \\
+  37 & 12 & 3 & Verſus. & 8 & \includeincipit{12_3} & \\
+  38 & 13 & 1 & Verſ: & 6 & \includeincipit{13_1} & \\
+  39 & 13 & 2 & [no title] & 8 & \includeincipit{13_2} & \\
+  40 & 13 & 3 & Finale. & 5 & \includeincipit{13_3} & \\
+  41 & 14 & 1 & Verſ: & 7 & \includeincipit{14_1} & \\
+  42 & 14 & 2 & Verſ: & 6 & \includeincipit{14_2} & \\
+  43 & 14 & 3 & Verſ: Contra. & 7 & \includeincipit{14_3} & \\
+  44 & 15 & 1 & [no title] & 6 & \includeincipit{15_1} & \\
+  45 & 15 & 2 & Verſus. & 11 & \includeincipit{15_2} & \\
+  46 & 15 & 3 & Verſus. & 9 & \includeincipit{15_3} & \\
+  47 & 16 & 1 & Verſ: & 6 & \includeincipit{16_1} & \\
+  48 & 16 & 2 & Verſus. & 10 & \includeincipit{16_2} & \\
+  49 & 17 & 1 & Verſ: & 8 & \includeincipit{17_1} & \\
   \midrule
 
   \tablesectionb{Tertius tonus (A aeolian), p. 18–23}
-  50 & 18 & 1 & Præludium | 3.|t|i|j Toni | Gugl. & 11 & \includegraphics{incipits/5/18_1} & \\
-  51 & 18 & 2 & Verſ & 8 & \includegraphics{incipits/5/18_2} & bars 5–8 on p. 19\\
-  52 & 19 & 1 & Verſ & 8 & \includegraphics{incipits/5/19_1} & \\
-  53 & 19 & 2 & Verſ: & 14 & \includegraphics{incipits/5/19_2} & \\
-  54 & 20 & 1 & Præludium. | Gugl. & 5 & \includegraphics{incipits/5/20_1} & \\
-  55 & 20 & 2 & [no title] & 24 & \includegraphics{incipits/5/20_2} & \\
-  56 & 21 & 1 & Fugetta. & 28 & \includegraphics{incipits/5/21_1} & \\
-  57 & 22 & 1 & Fugetta. & 17 & \includegraphics{incipits/5/22_1} & \\
-  58 & 22 & 2 & Fugetta. & 23 & \includegraphics{incipits/5/22_2} & bars 15–23 on p. 23\\
-  59 & 23 & 1 & Fugetta. & 8 & \includegraphics{incipits/5/23_1} & \\
-  60 & 23 & 2 & Ultimo. & 11 & \includegraphics{incipits/5/23_2} & \\
+  50 & 18 & 1 & Præludium | 3.|t|i|j Toni | Gugl. & 11 & \includeincipit{18_1} & \\
+  51 & 18 & 2 & Verſ & 8 & \includeincipit{18_2} & bars 5–8 on p. 19\\
+  52 & 19 & 1 & Verſ & 8 & \includeincipit{19_1} & \\
+  53 & 19 & 2 & Verſ: & 14 & \includeincipit{19_2} & \\
+  54 & 20 & 1 & Præludium. | Gugl. & 5 & \includeincipit{20_1} & \\
+  55 & 20 & 2 & [no title] & 24 & \includeincipit{20_2} & \\
+  56 & 21 & 1 & Fugetta. & 28 & \includeincipit{21_1} & \\
+  57 & 22 & 1 & Fugetta. & 17 & \includeincipit{22_1} & \\
+  58 & 22 & 2 & Fugetta. & 23 & \includeincipit{22_2} & bars 15–23 on p. 23\\
+  59 & 23 & 1 & Fugetta. & 8 & \includeincipit{23_1} & \\
+  60 & 23 & 2 & Ultimo. & 11 & \includeincipit{23_2} & \\
   \midrule
 
   \tablesectionb{Quartus tonus (E phrygian), p. 24–31}
-  61 & 24 & 1 & Præludium 4|t|i Toni. | Gugl & 6 & \includegraphics{incipits/5/24_1} & \\
-  62 & 24 & 2 & Verſus. [in pencil: 1] & 4 & \includegraphics{incipits/5/24_2} & \\
-  63 & 24 & 3 & Verſus. [in pencil: 2] & 7 & \includegraphics{incipits/5/24_3} & \\
-  64 & 24 & 4 & Verſus. [in pencil: 3] & 5 & \includegraphics{incipits/5/24_4} & \\
-  65 & 25 & 1 & [in pencil: 4] & 4 & \includegraphics{incipits/5/25_1} & \\
-  66 & 25 & 2 & Finale. & 3 & \includegraphics{incipits/5/25_2} & \\
-  67 & 25 & 3 & Verſus. [in pencil: 5] & 6 & \includegraphics{incipits/5/25_3} & \\
-  68 & 25 & 4 & [in pencil: 6] & 6 & \includegraphics{incipits/5/25_4} & \\
-  69 & 26 & 1 & Prælud: & 15 & \includegraphics{incipits/5/26_1} & \\
-  70 & 27 & 1 & Fugetta. & 16 & \includegraphics{incipits/5/27_1} & \\
-  71 & 27 & 2 & [in pencil: 7] & 4 & \includegraphics{incipits/5/27_2} & \\
-  – & 28 & 1 & Verſus [in pencil: 8] & 6 & \includegraphics{incipits/5/28_1} & same as GuglW 5.68\\
-  72 & 28 & 2 & Fugetta. & 13 & \includegraphics{incipits/5/28_2} & \\
-  73 & 29 & 1 & Fugetta. & 27 & \includegraphics{incipits/5/29_1} & \\
-  74 & 29 & 2 & [in pencil: 9] & 5 & \includegraphics{incipits/5/29_2} & \\
-  75 & 30 & 1 & Verſus. [in pencil: 10] & 8 & \includegraphics{incipits/5/30_1} & \\
-  76 & 30 & 2 & Verſus. [in pencil: 11] & 7 & \includegraphics{incipits/5/30_2} & \\
-  77 & 30 & 3 & Verſus [in pencil: 12] & 5 & \includegraphics{incipits/5/30_3} & \\
-  78 & 31 & 1 & Verſus [in pencil: 13] & 7 & \includegraphics{incipits/5/31_1} & \\
+  61 & 24 & 1 & Præludium 4|t|i Toni. | Gugl & 6 & \includeincipit{24_1} & \\
+  62 & 24 & 2 & Verſus. [in pencil: 1] & 4 & \includeincipit{24_2} & \\
+  63 & 24 & 3 & Verſus. [in pencil: 2] & 7 & \includeincipit{24_3} & \\
+  64 & 24 & 4 & Verſus. [in pencil: 3] & 5 & \includeincipit{24_4} & \\
+  65 & 25 & 1 & [in pencil: 4] & 4 & \includeincipit{25_1} & \\
+  66 & 25 & 2 & Finale. & 3 & \includeincipit{25_2} & \\
+  67 & 25 & 3 & Verſus. [in pencil: 5] & 6 & \includeincipit{25_3} & \\
+  68 & 25 & 4 & [in pencil: 6] & 6 & \includeincipit{25_4} & \\
+  69 & 26 & 1 & Prælud: & 15 & \includeincipit{26_1} & \\
+  70 & 27 & 1 & Fugetta. & 16 & \includeincipit{27_1} & \\
+  71 & 27 & 2 & [in pencil: 7] & 4 & \includeincipit{27_2} & \\
+  – & 28 & 1 & Verſus [in pencil: 8] & 6 & \includeincipit{28_1} & same as GuglW 5.68\\
+  72 & 28 & 2 & Fugetta. & 13 & \includeincipit{28_2} & \\
+  73 & 29 & 1 & Fugetta. & 27 & \includeincipit{29_1} & \\
+  74 & 29 & 2 & [in pencil: 9] & 5 & \includeincipit{29_2} & \\
+  75 & 30 & 1 & Verſus. [in pencil: 10] & 8 & \includeincipit{30_1} & \\
+  76 & 30 & 2 & Verſus. [in pencil: 11] & 7 & \includeincipit{30_2} & \\
+  77 & 30 & 3 & Verſus [in pencil: 12] & 5 & \includeincipit{30_3} & \\
+  78 & 31 & 1 & Verſus [in pencil: 13] & 7 & \includeincipit{31_1} & \\
   \midrule
 
   \tablesectionb{Quintus tonus (C ionian), p. 32–37}
-  79 & 32 & 1 & Præludium 5. Toni & 15 & \includegraphics{incipits/5/32_1} & \\
-  80 & 32 & 2 & [no title] & 5 & \includegraphics{incipits/5/32_2} & \\
-  81 & 33 & 1 & [no title] & 27 & \includegraphics{incipits/5/33_1} & \\
-  82 & 33 & 2 & [no title] & 3 & \includegraphics{incipits/5/33_2} & \\
-  83 & 34 & 1 & Fugetta. & 23 & \includegraphics{incipits/5/34_1} & \\
-  84 & 34 & 2 & Verſus. & 13 & \includegraphics{incipits/5/34_2} & bars 9–13 on p. 35\\
-  85 & 35 & 1 & Adagio. & 12 & \includegraphics{incipits/5/35_1} & \\
-  86 & 36 & 1 & [no title] & 11 & \includegraphics{incipits/5/36_1} & \\
-  87 & 36 & 2 & [no title] & 22 & \includegraphics{incipits/5/36_2} & bars 9–22 on p. 37\\
+  79 & 32 & 1 & Præludium 5. Toni & 15 & \includeincipit{32_1} & \\
+  80 & 32 & 2 & [no title] & 5 & \includeincipit{32_2} & \\
+  81 & 33 & 1 & [no title] & 27 & \includeincipit{33_1} & \\
+  82 & 33 & 2 & [no title] & 3 & \includeincipit{33_2} & \\
+  83 & 34 & 1 & Fugetta. & 23 & \includeincipit{34_1} & \\
+  84 & 34 & 2 & Verſus. & 13 & \includeincipit{34_2} & bars 9–13 on p. 35\\
+  85 & 35 & 1 & Adagio. & 12 & \includeincipit{35_1} & \\
+  86 & 36 & 1 & [no title] & 11 & \includeincipit{36_1} & \\
+  87 & 36 & 2 & [no title] & 22 & \includeincipit{36_2} & bars 9–22 on p. 37\\
   \midrule
 
   \tablesectionb{Sextus tonus (F ionian), p. 38–44}
-  88 & 38 & 1 & Præludium | 6.|t|i Toni & 11 & \includegraphics{incipits/5/38_1} & \\
-  89 & 38 & 2 & Verſus. & 7 & \includegraphics{incipits/5/38_2} & \\
-  90 & 39 & 1 & Verſus. & 6 & \includegraphics{incipits/5/39_1} & \\
-  91 & 39 & 2 & [no title] & 7 & \includegraphics{incipits/5/39_2} & \\
-  92 & 39 & 3 & [no title] & 18 & \includegraphics{incipits/5/39_3} & \\
-  93 & 40 & 1 & Finale. & 4 & \includegraphics{incipits/5/40_1} & \\
-  94 & 40 & 2 & Verſus. & 5 & \includegraphics{incipits/5/40_2} & \\
-  95 & 40 & 3 & [no title] & 11 & \includegraphics{incipits/5/40_3} & \\
-  96 & 41 & 1 & Verſus. & 16 & \includegraphics{incipits/5/41_1} & \\
-  97 & 41 & 2 & Fugetta. & 14 & \includegraphics{incipits/5/41_2} & \\
-  98 & 42 & 1 & Verſus. & 9 & \includegraphics{incipits/5/42_1} & \\
-  99 & 42 & 2 & [no title] & 30 & \includegraphics{incipits/5/42_2} & bars 22–30 on p. 43\\
-  100 & 43 & 1 & Verſus. & 16 & \includegraphics{incipits/5/43_1} & \\
-  101 & 43 & 2 & Ultimo. & 7 & \includegraphics{incipits/5/43_2} & p. 44 empty\\
+  88 & 38 & 1 & Præludium | 6.|t|i Toni & 11 & \includeincipit{38_1} & \\
+  89 & 38 & 2 & Verſus. & 7 & \includeincipit{38_2} & \\
+  90 & 39 & 1 & Verſus. & 6 & \includeincipit{39_1} & \\
+  91 & 39 & 2 & [no title] & 7 & \includeincipit{39_2} & \\
+  92 & 39 & 3 & [no title] & 18 & \includeincipit{39_3} & \\
+  93 & 40 & 1 & Finale. & 4 & \includeincipit{40_1} & \\
+  94 & 40 & 2 & Verſus. & 5 & \includeincipit{40_2} & \\
+  95 & 40 & 3 & [no title] & 11 & \includeincipit{40_3} & \\
+  96 & 41 & 1 & Verſus. & 16 & \includeincipit{41_1} & \\
+  97 & 41 & 2 & Fugetta. & 14 & \includeincipit{41_2} & \\
+  98 & 42 & 1 & Verſus. & 9 & \includeincipit{42_1} & \\
+  99 & 42 & 2 & [no title] & 30 & \includeincipit{42_2} & bars 22–30 on p. 43\\
+  100 & 43 & 1 & Verſus. & 16 & \includeincipit{43_1} & \\
+  101 & 43 & 2 & Ultimo. & 7 & \includeincipit{43_2} & p. 44 empty\\
   \midrule
 
   \tablesectionb{Septimus tonus (D ionian), p. 45–48}
-  102 & 45 & 1 & Præludium | 7:|m|i  Ton. & 5 & \includegraphics{incipits/5/45_1} & \\
-  103 & 45 & 2 & [no title] & 8 & \includegraphics{incipits/5/45_2} & \\
-  104 & 46 & 1 & [no title] & 24 & \includegraphics{incipits/5/46_1} & \\
-  105 & 46 & 2 & [no title] & 7 & \includegraphics{incipits/5/46_2} & \\
-  106 & 47 & 1 & [no title] & 10 & \includegraphics{incipits/5/47_1} & p. 48 empty\\
+  102 & 45 & 1 & Præludium | 7:|m|i  Ton. & 5 & \includeincipit{45_1} & \\
+  103 & 45 & 2 & [no title] & 8 & \includeincipit{45_2} & \\
+  104 & 46 & 1 & [no title] & 24 & \includeincipit{46_1} & \\
+  105 & 46 & 2 & [no title] & 7 & \includeincipit{46_2} & \\
+  106 & 47 & 1 & [no title] & 10 & \includeincipit{47_1} & p. 48 empty\\
   \midrule
 
   \tablesectionb{Octavus tonus (G mixolydian), p. 49–56}
-  107 & 49 & 1 & Præambul: | Octavi Toni & 13 & \includegraphics{incipits/5/49_1} & p. 49ff not paginated\\
-  108 & 49 & 2 & [no title] & 7 & \includegraphics{incipits/5/49_2} & \\
-  109 & 50 & 1 & [no title] & 15 & \includegraphics{incipits/5/50_1} & \\
-  110 & 50 & 2 & [no title] & 8 & \includegraphics{incipits/5/50_2} & bars 5–8 on p. 51\\
-  111 & 51 & 1 & [no title] & 11 & \includegraphics{incipits/5/51_1} & \\
-  112 & 52 & 1 & Verſus. & 10 & \includegraphics{incipits/5/52_1} & \\
-  113 & 52 & 2 & [no title] & 5 & \includegraphics{incipits/5/52_2} & \\
-  – & 53 & 1 & [no title] & 13 & \includegraphics{incipits/5/53_1} & same as GuglW 5.107;\newline p. 54–56 empty\\
+  107 & 49 & 1 & Præambul: | Octavi Toni & 13 & \includeincipit{49_1} & p. 49ff not paginated\\
+  108 & 49 & 2 & [no title] & 7 & \includeincipit{49_2} & \\
+  109 & 50 & 1 & [no title] & 15 & \includeincipit{50_1} & \\
+  110 & 50 & 2 & [no title] & 8 & \includeincipit{50_2} & bars 5–8 on p. 51\\
+  111 & 51 & 1 & [no title] & 11 & \includeincipit{51_1} & \\
+  112 & 52 & 1 & Verſus. & 10 & \includeincipit{52_1} & \\
+  113 & 52 & 2 & [no title] & 5 & \includeincipit{52_2} & \\
+  – & 53 & 1 & [no title] & 13 & \includeincipit{53_1} & same as GuglW 5.107;\newline p. 54–56 empty\\
 \end{xltabular}
 }
 
 Source (2) comprises one additional work and shares four works with source (1):
 
 {\scriptsize
-\begin{xltabular}{\linewidth}{>{\sbseries}r r r >{\raggedright}p{3cm} r m{6cm} X}
+\begin{xltabular}{\textwidth}{>{\sbseries}r r r >{\raggedright}p{3cm} r m{6cm} X}
   \toprule
     &
     \itshape p. &
@@ -963,11 +1113,11 @@ Source (2) comprises one additional work and shares four works with source (1):
   \endfoot
 
   \tablesectionb{Quintus tonus (C ionian), p. 55–66}
-  114 & 57 & 2 & Verſus | Del Sig. Gugl & 7 & \includegraphics{incipits/5/B_57_2} &  \\
-  – & 60 & 1 & Fugetta | Del Sig: Gugl & 27 & \includegraphics{incipits/5/B_60_1} & same as GuglW 5.81 \\
-  – & 61 & 1 & Fugetta | dal Sig: Gugl & 23 & \includegraphics{incipits/5/B_61_1} & same as GuglW 5.83 \\
-  – & 62 & 1 & Fugetta | del Sig: Gugl & 13 & \includegraphics{incipits/5/B_62_1} & same as GuglW 5.84 \\
-  – & 63 & 1 & Fugetta | Del Sig: Gugl & 11 & \includegraphics{incipits/5/B_63_1} & same as GuglW 5.86 \\
+  114 & 57 & 2 & Verſus | Del Sig. Gugl & 7 & \includeincipit{B_57_2} &  \\
+  – & 60 & 1 & Fugetta | Del Sig: Gugl & 27 & \includeincipit{B_60_1} & same as GuglW 5.81 \\
+  – & 61 & 1 & Fugetta | dal Sig: Gugl & 23 & \includeincipit{B_61_1} & same as GuglW 5.83 \\
+  – & 62 & 1 & Fugetta | del Sig: Gugl & 13 & \includeincipit{B_62_1} & same as GuglW 5.84 \\
+  – & 63 & 1 & Fugetta | Del Sig: Gugl & 11 & \includeincipit{B_63_1} & same as GuglW 5.86 \\
   \end{xltabular}
 }
 
@@ -1004,17 +1154,17 @@ hand-ruled paper, 10 staves (10 mm)
 see table above for details
 
 
-\subsubsection{(2) Autograph manuscript}
+\subsubsection{(2) Manuscript copy}
 
 \textsb{Classification}\\
-notated music · manuscript · autograph · score · fair copy · complete
+notated music · manuscript · copy · score · fair copy · complete
 
 \textsb{Location}\\
-D-Hs M A/801
+D-Hs M A/801\\
+(digitized version: \url{https://katalogplus.sub.uni-hamburg.de/vufind/Record/1969466030})
 
 \textsb{RISM}\\
-450035689\\
-(digitized version: \url{https://katalogplus.sub.uni-hamburg.de/vufind/Record/1969466030})
+450035689
 
 \textsb{Publication, dating}\\
 ca. 1720–30
@@ -1026,6 +1176,7 @@ Joseph Balthasar Hochreither (brown ink)
 \textit{[fol. 1r]}\\\relax
 [in pencil, by later hand; all brackets are reproduced from the source:] (J[oseph] B[althasar] Hochreitter, Schweighofer u. | [Matthäus] Gugl | Octitonium.) | [Anf. d. 18. Jhs.]
 
+\pagebreak
 \textsb{Physical description}\\
 1 score (50 fol.)\\
 17 × 24 cm\\
@@ -1034,77 +1185,89 @@ hand-ruled paper, 6 staves (10 mm)
 \textsb{Components and notes}\\[1ex]
 This source contains 159 organ works, of which 19 are attributed to Hochreither, 5 to Gugl, and 5 to (Severin) Schwaighofer. See \textcite{EsserSkala2026} for details and Figure~\ref{fig:octitonium}.
 
-Watermarks: (1) R, in coat of arms with Bavarian rhombs, crowned by mitre and crozier [= no. 188 in the catalogue of A-Sd; paper mill of Franz Anton Niederdorfer in Raitenhaslach]; and (2) savage man in cartouche (crowned, large) [= no. 25; paper mill of Johann Sigismund Hofmann, Lengfelden].
+Watermarks: (1) R, in coat of arms with Bavarian rhombs, crowned by mitre and crozier [= no. 188 in the catalogue of A-Sd \parencite{Neumayr2018}; paper mill of Franz Anton Niederdorfer in Raitenhaslach]; and (2) savage man in cartouche (crowned, large) [= no. 25; paper mill of Johann Sigismund Hofmann, Lengfelden].
 
 
 
 \begin{figure}[p]
   \centering
   \includegraphics[height=.95\textheight]{facsimile/corona_title}
-  \caption{Title page (D-B DMS 217257, org part, fol. 1v).}
+  \caption{\textit{Corona stellarum duodecim}: Title page (fol. 1v) of the org part (D-B DMS 217257).}
   \label{fig:corona_title}
 \end{figure}
 
 \begin{figure}[p]
   \centering
   \includegraphics[height=.95\textheight]{facsimile/corona_org}
-  \caption{First page with music of the org part (D-B DMS 217257, fol. 4r).}
+  \caption{\textit{Corona stellarum duodecim}: First page with music (fol. 4r) of the org part (D-B DMS 217257).}
   \label{fig:corona_org}
 \end{figure}
 
 \begin{figure}[p]
   \centering
   \includegraphics[height=.95\textheight]{facsimile/corona_index}
-  \caption{Table of contents (D-B DMS 217257, org part, fol. 24r).}
+  \caption{\textit{Corona stellarum duodecim}: Table of contents (fol. 24r) of the org part (D-B DMS 217257).}
   \label{fig:corona_index}
 \end{figure}
 
 \begin{figure}[p]
   \centering
+  \includegraphics{corona_intro_1}
+  \caption{\textit{Corona stellarum duodecim}: Alternative version of the section \textit{Kyrie eleison} in litany no.~8 (\textit{Virgo prudentissima}), which appears in the D-OB source (continued on next page).}
+  \label{fig:corona_intro}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics{corona_intro_2}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
   \includegraphics[height=.95\textheight]{facsimile/missa_alto}
-  \caption{A-KR C 12/691, A part, fol. 1r.}
+  \caption{\textit{Missa Sanctissimae Trinitatis}: A part, fol. 1r (A-KR C 12/691).}
   \label{fig:missa_alto}
 \end{figure}
 
 \begin{figure}[p]
   \centering
   \includegraphics[height=.95\textheight]{facsimile/missa_vl1}
-  \caption{A-KR C 12/691, vl 1 part, fol. 1r.}
+  \caption{\textit{Missa Sanctissimae Trinitatis}: vl 1 part, fol. 1r (A-KR C 12/691).}
   \label{fig:missa_vl1}
 \end{figure}
 
 \begin{figure}[p]
   \centering
   \includegraphics[height=.95\textheight]{facsimile/missa_org}
-  \caption{A-KR C 12/691, org part, fol. 1r.}
+  \caption{\textit{Missa Sanctissimae Trinitatis}: org part, fol. 1r (A-KR C 12/691).}
   \label{fig:missa_org}
 \end{figure}
 
 \begin{figure}[p]
   \centering
   \includegraphics[height=.95\textheight]{facsimile/quae_title}
-  \caption{A-LA 920, wrapper, fol. 1r.}
+  \caption{\textit{Quae est ista}: wrapper, fol. 1r (A-LA 920).}
   \label{fig:quae_title}
 \end{figure}
 
 \begin{figure}[p]
   \centering
   \includegraphics[height=.95\textheight]{facsimile/quae_soprano}
-  \caption{A-LA 920, S part, fol. 1r.}
+  \caption{\textit{Quae est ista}: S part, fol. 1r (A-LA 920).}
   \label{fig:quae_soprano}
 \end{figure}
 
 \begin{figure}[p]
   \centering
   \includegraphics[height=.95\textheight]{facsimile/quae_org}
-  \caption{A-LA 920, org part, fol. 1r.}
+  \caption{\textit{Quae est ista}: org part, fol. 1r (A-LA 920).}
   \label{fig:quae_org}
 \end{figure}
 
 \begin{figure}[p]
   \centering
-  \includegraphics[height=.95\textheight]{facsimile/octitonium}
-  \caption{D-Hs M A/801, p. 61 and 63.}
+  \includegraphics[height=.90\textheight]{facsimile/octitonium}
+  \caption{Two of Gugl's fugettas (GuglW 5.83 and 86) in the hand of Joseph Balthasar Hochreither (\textit{Octitonium}, D-Hs M A/801, p. 61 and 63).}
   \label{fig:octitonium}
 \end{figure}
 
@@ -1112,88 +1275,29 @@ Watermarks: (1) R, in coat of arms with Bavarian rhombs, crowned by mitre and cr
 \cleardoublepage
 \chapter{Critical report}
 
-\section{Abbreviations}
-
-\begin{abbreviations}
-  \abbr{A}{alto}
-  \abbr{B}{bass}
-  \abbr{b}{basses}
-  \abbr{clno}{clarion}
-  \abbr{mdc}{maestro di cappella}
-  \abbr{org}{organ}
-  \abbr{S}{soprano}
-  \abbr{T}{tenor}
-  \abbr{timp}{timpani}
-  \abbr{vl}{violin}
-  \abbr{vla}{viola}
-  \abbr{vlne}{violone}
-\end{abbreviations}
-
-
 \section{Sources}
 
-\subsection{Corona stellarum duodecim}
+This edition bases upon the following principal sources (see catalogue of works for source descriptions):
 
-\begin{sources}
-  \sourceitem%
-    {C1}%
-    {D-B}%
-    {DMS 217257}%
-    {print (principal source)}%
-    {1710}%
-    {990023743}%
-
-  \sourceitem%
-    {C2}%
-    {A-Sd}%
-    {A 1502}%
-    {print (principal source)}%
-    {1710}%
-    {990023743}%
-
-\sourceitem%
-  {D1}%
-  {D-OB}%
-  {MO 444}%
-  {manuscript not used for this edition}%
-  {ca. 1740}%
-  {450007851}%
-\end{sources}
-
-\subsection{Missa Sanctissimae Trinitatis}
-
-\begin{sources}
-  \sourceitem%
-    {B1}%
-    {A-KR}%
-    {C 12/691}%
-    {manuscript copy (principal source)}%
-    {1712}%
-    {600172799}%
-\end{sources}
-
-\subsection{Quae est ista}
-
-\begin{sources}
-  \sourceitem%
-    {B1}%
-    {A-LA}%
-    {920}%
-    {manuscript copy (principal source)}%
-    {1746–68}%
-    {603001868}%
-\end{sources}
+\begin{tabularx}{\textwidth}{llX}
+  \toprule
+  \itshape work & \itshape source & \itshape location \\
+  \midrule
+  Corona stellarum duodecim     & \C1 & D-B DMS 217257 \\
+                                & \C2 & A-Sd 1502 \\
+  Missa Sanctissimae Trinitatis & \B1 & A-KR C 12/691 \\
+  Quae est ista                 & \B1 & A-LA 920 \\
+  \bottomrule
+\end{tabularx}
 
 
 \section{Commentary}
 
-In general, this edition closely follows the principal source. Any changes that were introduced by the editor are indicated by italic type (lyrics, dynamics and directives), parentheses (expressive marks and bass figures) or dashes (slurs and ties). For further details, consult the Editorial Guidelines.
+In general, this edition closely follows the principal source. Any changes that were introduced by the editor are indicated by italic type (lyrics, dynamics and directives), parentheses (expressive marks and bass figures) or dashes (slurs and ties). For further details, consult the Editorial Guidelines. Asterisks denote the following emendations:
 
-Asterisks denote the following emendations:
-
-\begin{xltabular}{\linewidth}{lll X}
+\begin{xltabular}{\textwidth}{lll X}
   \toprule
-  \itshape Mov. & \itshape Bar & \itshape Staff & \itshape Description \\
+  \itshape mov. & \itshape bar & \itshape staff & \itshape description \\
   \midrule \endhead
   \bottomrule \endfoot
 
@@ -1219,7 +1323,7 @@ Asterisks denote the following emendations:
                      indicated by bass figures \\
      & 211  & org  & 3rd \quarterNote\ of upper voice in \C1
                      indicated by bass figures \\
-  3  & 11   & S    & 1st \quarterNote\ in \C1: \sharp f″4 \\
+  3  & 11   & S    & 1st \quarterNote\ in \C1: \sharp f″4 \\*
      & 12   & A    & 2nd \halfNote\ in \C1: \sharp f′4.–\sharp f′4 \\
      & 223  & A    & 1st \quarterNote\ in \C1: \sharp d′8 \\
   4  & 1    & A    & 1st to 3rd \quarterNote\ in \C1: \sharp f′4.–e′8–d′4 \\
@@ -1251,13 +1355,7 @@ Asterisks denote the following emendations:
                      indicated by bass figures \\
      & 79   & vl 1, S, T & time signature in \C1: common time \\
      & 103f & org  & upper voice in \C1 indicated by bass figures \\
-  8  & –    & –    & \D1 contains an arrangement of this litany
-                     for four voices and continuo.
-                     Table~\ref{tab:changes} compares the versions
-                     in \C1 and \D1. Thus, only the first section notably
-                     differs between these two sources
-                     (Figure~\ref{fig:corona_intro}). \\
-     & 15   & T    & 2nd \halfNote\ in \C1: \sharp c′2 \\
+  8  & 15   & T    & 2nd \halfNote\ in \C1: \sharp c′2 \\
      & 104  & T    & 2nd \eighthNote\ in \C1: b8, corrected
                      with pencil to \sharp c′8 \\
   9  & –    & org  & The directive “C.S.” (Canto solo, bar 123) is omitted. \\
@@ -1280,7 +1378,7 @@ Asterisks denote the following emendations:
      & 249f & org  & treble ottavo clef added by editor \\
   12 & 7    & org  & upper voice in \C1 indicated by bass figures \\
      & 15   & org  & upper voice in \C1 indicated by bass figures \\
-     & 87   & A, org & time signature in \C1: common time \\
+     & 87   & A, org & time signature in \C1: common time \\*
      & 89   & A    & 6th \eighthNote\ in \C1: \sharp f′8 \\
   \midrule
 
@@ -1364,85 +1462,39 @@ Asterisks denote the following emendations:
 \end{xltabular}
 \setcounter{table}{0}
 
-\begin{table}[h]
-  \captionabove{Comparison of the 8th litany between sources \C1 and \D1.}
-  \label{tab:changes}
-  \begin{tabularx}{\textwidth}{lllX}
-    \toprule
-    & \multicolumn{2}{l}{\itshape bars in source} \\
-    \cmidrule{2-3}
-    \itshape Title & \C1 & \D1 & \itshape Differences \\
-    \midrule
-    Kyrie eleison & 1–80 & 1–60 & 3/4 time; bars with vl solos removed \\
-    Sancta Maria & 81–106 & 61–85 & almost identical (one bar removed) \\
-    Virgo prudentissima & 107–163 & 86–136 & vl solos (bars 127–130 and 148–149) removed \\
-    Rosa mystica & 164–192 & 137–165 & identical \\
-    Agnus Dei & 193–213 & 166–186 & identical \\
-    \bottomrule
-  \end{tabularx}
-\end{table}
 
-\begin{figure}[p]
-  \centering
-  \includegraphics{corona_intro_1}
-  \caption{Alternative version of the section \textit{Kyrie eleison} in litany no. 8 (\textit{Virgo prudentissima}), which appears in~\D1 (continued on next page).}
-  \label{fig:corona_intro}
-\end{figure}
 
-\begin{figure}[p]
-  \centering
-  \includegraphics{corona_intro_2}
-\end{figure}
+\subsection{Performance materials}
+
+Performance materials for all works are available online under a Creative Commons Attribution-ShareAlike 4.0 International License, both on the edition's website via the given Archival Resource Keys (ARKs) and from the International Music Score Library Project (IMSLP). Moreover, the source code of all scores is available in LilyPond format from Codeberg.
+
+\begin{tabular}{@{}ll}
+  \multicolumn{2}{@{}l}{\itshape Corona Stellarum Duodecim} \\
+  ARK   & \url{https://n2t.net/ark:68748/e1mgu2} \\
+  IMSLP & \url{https://imslp.org/wiki/Category:Gugl%2C_Matth%C3%A4us} \\
+  code  & \url{https://codeberg.org/edition-esser-skala/gugl-corona-stellarum-duodecim-GuglW-2} \\[1ex]
+  \multicolumn{2}{@{}l}{\itshape Missa Sanctissimae Trinitatis} \\
+  ARK   & \url{https://n2t.net/ark:68748/e1mgu3} \\
+  IMSLP & \url{https://imslp.org/wiki/Category:Gugl%2C_Matth%C3%A4us} \\
+  code  & \url{https://codeberg.org/edition-esser-skala/gugl-missa-sanctissimae-trinitatis-GuglW-3} \\[1ex]
+  \multicolumn{2}{@{}l}{\itshape Quae est ista} \\
+  ARK   & \url{https://n2t.net/ark:68748/e1mgu4} \\
+  IMSLP & \url{https://imslp.org/wiki/Category:Gugl%2C_Matth%C3%A4us} \\
+  code  & \url{https://codeberg.org/edition-esser-skala/gugl-quae-est-ista-GuglW-4} \\
+\end{tabular}
 
 
 
 \cleardoublepage
 \chapter{Editorial guidelines}
 
+(Below, we reproduce only the relevant excerpts from the \textit{Editorial Guidelines for the Edition Esser-Skala} v2026.01.0. The full version is available at \url{https://github.com/edition-esser-skala/ees-tools/blob/v2026.01.0/documents/editorial_guidelines.md}.)
+
+
+
 \section*{Prefatory material}
 
-Prefatory material comprises the title and copyright page. In addition, the full score also contains a critical report and table of contents.
-
-
-\subsection{Title page}
-
-The \textit{title page} (p. i) includes the following information:
-\begin{bulletlist}
-  \item a header with the composer's last name and the project title
-  \item the composer's full name (last name printed in red)
-  \item the title of the work (bold)
-  \item a subtitle (if applicable)
-  \item the catalog of works number
-  \item the scoring
-  \item the score type (e.g., “Full Score”, “Violino I”; use modern Italian names).
-  \item the full logo of the Edition Esser-Skala
-\end{bulletlist}
-
-The \textit{scoring} lists all vocal parts and instruments:
-\begin{bulletlist}
-  \item Individual instruments are separated by commas (e.g., “S, vla, org”).
-  \item An Arabic numeral prefix indicates the number of each instrument (e.g., “2 vl”).
-  \item The pitch of transposing instruments is given in parentheses (e.g., “timp (C–G)”).
-  \item Solo and chorus vocal parts are distinguished (e.g., “S, A (solo), S, A, T, B (coro)”).
-  \item Instruments that are not available in all sources or have been added by the editor are surrounded by brackets (e.g., “[2 fl]”).
-\end{bulletlist}
-
-The \textit{copyright page} (p. ii) includes:
-\begin{bulletlist}
-  \item the copyright statement (CC BY-SA 4.0)
-  \item an indication of used software and fonts
-  \item contact details (email address)
-  \item a link to the GitHub repository
-  \item the current version, date, and SHA1 of the git repository
-\end{bulletlist}
-
-
 \subsection{Critical report}
-
-The critical report (p. iii et sqq.) consists of three sections: abbreviations, sources, and commentary.
-
-\paragraph{Abbreviations}
-This section contains a table of used abbreviations. Instruments are abbreviated according to \href{https://opac.rism.info/scoring-abbreviations}{RISM}.
 
 \paragraph{Sources}
 This section describes the used sources of a given work. Each source is labeled with a bold capital letter (indicating the source category) followed by an index number:
@@ -1455,18 +1507,6 @@ This section describes the used sources of a given work. Each source is labeled 
 \end{bulletlist}
 
 Within each category, sources are labeled in order of importance.
-
-For each source, the following information is included:
-\begin{bulletlist}
-  \item RISM library siglum and shelfmark
-  \item source category
-  \item indication whether this source represents the principal source
-  \item date (optional)
-  \item RISM identifier (optional)
-  \item link to digital version (optional)
-  \item license
-  \item notes (optional)
-\end{bulletlist}
 
 \paragraph{Commentary}
 Each edition is based upon a single principal source, which is explicitly identified. Any substantial difference between the edition and the principal source is indicated with an asterisk in the score and reported in this section as an editorial \textit{emendation}.
@@ -1494,17 +1534,11 @@ The following conventions apply to the commentary:
 \end{bulletlist}
 
 
-\subsection{Table of contents}
-
-The table of contents list all individual movements with their number, title, and page number. For each movement, its genre as well as lyrics may be included. If a work has a single movement, the table of contents will be omitted.
-
-
-
 \section*{Conventions of notation}
 
 \subsection{Score design}
 
-The *score order* from top to bottom is:
+The \textit{score order} from top to bottom is:
 \begin{bulletlist}
   \item woodwind instruments (flutes, cornetts, oboes, chalumeaux, clarinets, bassoons)
   \item brass instruments (horns, trumpets, trombones)
@@ -1538,7 +1572,8 @@ The original key signature is retained, while the order and position of sharps a
 
 \subsection{Tempo indications and movement designations}
 
-Tempo indications appear in the original language; inconsistent spelling is regularized. Only the first word of Italian terms is capitalized (e.g., “Poco andante”). Movement designations may be retained in the original language (“Chor”) or transeed to Italian (“Coro”).
+Tempo indications appear in the original language; inconsistent spelling is regularized. Only the first word of Italian terms is capitalized (e.g., “Poco andante”). Movement designations may be retained in the original language (“Chor”) or translated to Italian (“Coro”). A missing tempo indication is denoted as “[no tempo]”.
+
 
 Individual movements are numbered by the editor if numbers are absent in the source.
 
@@ -1590,5 +1625,16 @@ Generally, notational shorthand is realized in full. Slashed stems may be used t
 \subsection{Vocal texts}
 
 Latin texts are standardized and modernized. Archaic German spelling is retained (notably, lyrics distinguish between long ſ and round s). Editorial changes are indicated by italic type. When text is repeated in vocal music, a period is only used if a complete sentence is repeated; otherwise, a comma is used. Syllabification of German text is standardized according to the Duden. Groups of notes sung to a single syllable are beamed together, notes sung to separate syllables are stemmed separately.
+
+\cleardoublepage%
+\pagenumbering{arabic}%
+\setcounter{page}{1}%
+\includepdf[pages=-,link=true,linkname=score]{scores/2/full_score.pdf}%
+
+\cleardoublepage
+\includepdf[pages=-,link=true,linkname=score]{scores/3/full_score.pdf}%
+
+\cleardoublepage
+\includepdf[pages=-,link=true,linkname=score]{scores/4/full_score.pdf}%
 
 \end{document}
