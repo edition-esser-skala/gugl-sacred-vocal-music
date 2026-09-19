@@ -1,14 +1,20 @@
 \version "2.24.0"
 
+\include "../definitions_main.ly"
 \include "definitions.ly"
 \include "score_settings/full-score.ly"
 
 #(set-default-paper-size '(cons (* 8.25 in) (* 11 in)))
 
-\paper { first-page-number = #401 }
+\paper {
+  top-margin = 10\mm
+  outer-margin = 1.2\cm
+  inner-margin = 2.3\cm
+  first-page-number = #401
+}
 
 \book {
-  \part "offertory" "GuglW 4" "Quæ est ista"
+  \work "offertory" "GuglW 4" "Quæ est ista"
   \bookpart {
     \section "Quæ est ista"
     \addTocEntry

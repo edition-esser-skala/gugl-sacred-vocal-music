@@ -1,11 +1,15 @@
 \version "2.24.0"
 
+\include "../definitions_main.ly"
 \include "definitions.ly"
 \include "score_settings/full-score.ly"
 
 #(set-default-paper-size '(cons (* 8.25 in) (* 11 in)))
 
 \paper {
+  top-margin = 10\mm
+  outer-margin = 1.2\cm
+  inner-margin = 2.3\cm
   top-system-spacing.basic-distance = #10
   top-system-spacing.minimum-distance = #10
   top-markup-spacing.basic-distance = #0
@@ -18,7 +22,7 @@
 }
 
 \book {
-  \part "litany" "GuglW 2" "Corona stellarum duodecim"
+  \work "litany" "GuglW 2" "Corona stellarum duodecim"
   \bookpart {
     \section "1" "Regina Angelorum"
     \addTocEntry
@@ -30,7 +34,7 @@
     \score { %\articulate
       <<
         \new StaffGroup <<
-          \new GrandStaff \with { \setGroupDistance #11 #11 } <<
+          \new GrandStaff \with { \setGroupDistance #9 #11 } <<
             \set GrandStaff.instrumentName = "Violino"
             \new Staff {
               \set Staff.instrumentName = "I"
@@ -42,7 +46,7 @@
             }
           >>
         >>
-        \new ChoirStaff \with { \setGroupDistance #11 #12 } <<
+        \new ChoirStaff \with { \setGroupDistance #11 #11 } <<
           \new Staff {
             \incipit "Soprano I" "soprano" #-19.5 #-1.8
             \new Voice = "SopranoI" { \dynamicUp \ISopranoI }
@@ -95,7 +99,7 @@
     \score { %\articulate
       <<
         \new StaffGroup <<
-          \new GrandStaff \with { \setGroupDistance #11 #11 } <<
+          \new GrandStaff \with { \setGroupDistance #9 #11 } <<
             \set GrandStaff.instrumentName = "vl"
             \new Staff {
               \set Staff.instrumentName = "1"
@@ -107,7 +111,7 @@
             }
           >>
         >>
-        \new ChoirStaff \with { \setGroupDistance #11 #12 } <<
+        \new ChoirStaff \with { \setGroupDistance #11 #11 } <<
           \new Staff {
             \set Staff.instrumentName = "S 1"
             \new Voice = "SopranoI" { \dynamicUp \IISopranoI }

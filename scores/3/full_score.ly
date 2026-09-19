@@ -1,14 +1,20 @@
 \version "2.24.0"
 
+\include "../definitions_main.ly"
 \include "definitions.ly"
 \include "score_settings/full-score.ly"
 
 #(set-default-paper-size '(cons (* 8.25 in) (* 11 in)))
 
-\paper { first-page-number = #249 }
+\paper {
+  top-margin = 10\mm
+  outer-margin = 1.2\cm
+  inner-margin = 2.3\cm
+  first-page-number = #249
+}
 
 \book {
-  \part "missa" "GuglW 3" "Missa Sanctissimæ Trinitatis"
+  \work "missa" "GuglW 3" "Missa Sanctissimæ Trinitatis"
   \bookpart {
     \section "1" "Kyrie"
     \addTocEntry
@@ -46,7 +52,7 @@
             }
             \new Staff {
               \set Staff.instrumentName = "II"
-              \KyrieViolaII
+              \clef tenor \KyrieViolaII
             }
           >>
         >>
@@ -123,7 +129,7 @@
             }
             \new Staff {
               \set Staff.instrumentName = "2"
-              \GloriaViolaII
+              \clef tenor \GloriaViolaII
             }
           >>
         >>
@@ -200,7 +206,7 @@
             }
             \new Staff {
               \set Staff.instrumentName = "2"
-              \CredoViolaII
+              \clef tenor \CredoViolaII
             }
           >>
         >>
@@ -277,7 +283,7 @@
             }
             \new Staff {
               \set Staff.instrumentName = "2"
-              \SanctusViolaII
+              \clef tenor \SanctusViolaII
             }
           >>
         >>
@@ -383,7 +389,7 @@
             }
             \new Staff {
               \set Staff.instrumentName = "2"
-              \AgnusViolaII
+              \clef tenor \AgnusViolaII
             }
           >>
         >>
